@@ -57,23 +57,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11602}
+      Script: {instanceID: 11604}
     - Class: 114
-      Script: {instanceID: 11970}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12102}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12658}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12776}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 13794}
+      Script: {instanceID: 13796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,6 +129,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 38df7b0d1cfd9ed60046d601ba0b1ed7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimerBar
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -419,7 +425,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: f0f4670e70e4e17655d6fabc99638565
+      Hash: d0acc83a414f5d17bf75975e97d809ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoneyManager

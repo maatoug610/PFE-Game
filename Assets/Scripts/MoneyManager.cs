@@ -27,7 +27,8 @@ public class MoneyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoneyText.text = Money.ToString("C2");
+        //MoneyText.text = Money.ToString("C2");
+        
         TimerText.text = Timer.ToString("0.0");
         TimerImage.fillAmount = Mathf.InverseLerp(0, TimeRest, Timer);
         if(StartTimer == 1 ){
@@ -42,5 +43,9 @@ public class MoneyManager : MonoBehaviour
 
     public void StartBtnClicked(){
         StartTimer = 1;
+    }
+
+    public void ClaimMoney(){
+        MoneyText.text = Money.ToString("C2");
     }
 }
