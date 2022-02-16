@@ -1,8 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CameraController
-    - ClickObject
     - MoneyManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -25,7 +23,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/level1.unity:
+    Assets/Scenes/CartoonLowPolyCityLite_01.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -61,13 +59,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11604}
     - Class: 114
-      Script: {instanceID: 11972}
-    - Class: 114
       Script: {instanceID: 12104}
     - Class: 114
       Script: {instanceID: 12660}
-    - Class: 114
-      Script: {instanceID: 12776}
     - Class: 114
       Script: {instanceID: 13318}
     - Class: 114
@@ -91,6 +85,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -539,5 +535,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/level1.unity
+  - Assets/Scenes/CartoonLowPolyCityLite_01.unity
   playerPath: C:/Users/PC/PFE App/PFEtest.apk
