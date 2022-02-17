@@ -51,9 +51,9 @@ namespace DailyRewardSystem {
 		[Space]
 		[Header ( "Timing" )]
 		//wait 23 Hours to activate the next reward (it's better to use 23h instead of 24h)
-		[SerializeField] double nextRewardDelay = 0.1f;
+		[SerializeField] double nextRewardDelay = 22f;
 		//check if reward is available every 5 seconds
-		[SerializeField] float checkForRewardDelay = 0.1f;
+		[SerializeField] float checkForRewardDelay = 5f;
 
 
 		private int nextRewardIndex;
