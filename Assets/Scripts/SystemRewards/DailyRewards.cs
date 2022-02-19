@@ -42,11 +42,11 @@ namespace DailyRewardSystem {
 		[Header ( "Rewards Database" )]
 		[SerializeField] RewardsDataBase rewardsDB;
 
-		// [Space]
-		// [Header ( "FX" )]
+		[Space]
+		[Header ( "FX" )]
 		
-		// [SerializeField] ParticleSystem fxCoins;
-		// [SerializeField] ParticleSystem fxGems;
+		[SerializeField] ParticleSystem fxCoins;
+		[SerializeField] ParticleSystem fxGems;
 
 		[Space]
 		[Header ( "Timing" )]
@@ -144,13 +144,13 @@ namespace DailyRewardSystem {
 		 if ( reward.Type == RewardType.Coins ) {
 				Debug.Log ( "<color=yellow>" + reward.Type.ToString ( ) + " Claimed : </color>+" + reward.Amount );
 				GameData.Coins += reward.Amount;
-				//fxCoins.Play ( );
+				fxCoins.Play ( );
 				UpdateCoinsTextUI ( );
 
 			} else {//reward.Type == RewardType.Gems
 				Debug.Log ( "<color=green>" + reward.Type.ToString ( ) + " Claimed : </color>+" + reward.Amount );
 				GameData.Gems += reward.Amount;
-				//fxGems.Play ( );
+				fxGems.Play ( );
 				UpdateGemsTextUI ( );
 				isRewardReady = false;
 			}
