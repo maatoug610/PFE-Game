@@ -59,9 +59,8 @@ namespace DailyRewardSystem {
 		private int nextRewardIndex;
 		private bool isRewardReady = false;
 
-		void Start ( ) {
-			Initialize ( );
-
+		void Start () {
+			Initialize ();
 			StopAllCoroutines ( );
 			StartCoroutine ( CheckForRewards ( ) );
 		}
@@ -69,7 +68,7 @@ namespace DailyRewardSystem {
 		void Initialize ( ) {
 			nextRewardIndex = PlayerPrefs.GetInt ( "Next_Reward_Index", 0 );
 
-			//Update Mainmenu UI (metals,coins,gems)
+			//Update MainMenu UI (coins,gems)
 			
 			UpdateCoinsTextUI ( );
 			UpdateGemsTextUI ( );

@@ -4,17 +4,21 @@ using System.Globalization;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+namespace DailyRewardSystem {
+public enum GemsType {
+		Gems,
+	}
 
 public class MoneyManager : MonoBehaviour
 {
-    public float Money = 0;
+    float Money;
     public float MoneyAdded = 400;
     public float Timer = 6;
     public int StartTimer = 0;
     public float TimeRest = 6;
 
     public Text MoneyText;
-    public Text TimerText;
+    //public Text TimerText;
     [SerializeField] private Image TimerImage;
 
 
@@ -27,16 +31,19 @@ public class MoneyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //MoneyText.text = Money.ToString("C2");
-        
-        TimerText.text = Timer.ToString("0.0");
+        MoneyText.text = GameData.Gems.ToString();
+        //MoneyText.text = Money.ToString();
+        //TimerText.text = Timer.ToString("0.0");
         TimerImage.fillAmount = Mathf.InverseLerp(0, TimeRest, Timer);
-        if(StartTimer == 1 ){
-            Timer = Timer - 1 * Time.deltaTime; 
+        if(StartTimer == 0 ){
+            Timer = Timer - 1 * Time.deltaTime;
+            
         }
         if(Timer < 0){
-            Money = Money + MoneyAdded;
-            Timer = TimeRest;
+            
+            GameData.Gems = GameData.Gems + (int) MoneyAdded;
+            //Timer = TimeRest;
+            Timer = 20;
             StartTimer = 0;
         }
     }
@@ -45,7 +52,8 @@ public class MoneyManager : MonoBehaviour
         StartTimer = 1;
     }
 
-    public void ClaimMoney(){
-        MoneyText.text = Money.ToString("C2");
-    }
+    // public void ClaimMoney(){
+    //     MoneyText.text = Money.ToString("C2");
+    // }
+}
 }
