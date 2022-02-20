@@ -15,19 +15,18 @@ void Update (){
        touchStart = GetWorldPosition(groundZ);
     }
     if (Input.GetMouseButton(0)){
-       Vector3 direction = touchStart - GetWorldPosition(groundZ);;
+       Vector3 direction = touchStart - GetWorldPosition(groundZ);
         Camera.main.transform.position += direction;
     }
 }
 
 private Vector3 GetWorldPosition(float z){
-    
+    float distance;
+
     Ray mousePos = cam.ScreenPointToRay(Input.mousePosition);
     Plane ground = new Plane (Vector3.forward, new Vector3(0,0,z));
-    float distance;
     ground.Raycast(mousePos, out distance);
     
-    return mousePos.GetPoint(distance);    
-    
+    return mousePos.GetPoint(1);       
 }
 }
