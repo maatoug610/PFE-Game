@@ -77,6 +77,7 @@ namespace DailyRewardSystem {
 			openButton.onClick.RemoveAllListeners ( );
 			openButton.onClick.AddListener ( OnOpenButtonClick );
 
+
 			closeButton.onClick.RemoveAllListeners ( );
 			closeButton.onClick.AddListener ( OnCloseButtonClick );
 
@@ -93,7 +94,7 @@ namespace DailyRewardSystem {
 				if ( !isRewardReady ) {
 					DateTime currentDatetime = DateTime.Now;
 					DateTime rewardClaimDatetime = DateTime.Parse ( PlayerPrefs.GetString ( "Reward_Claim_Datetime", currentDatetime.ToString ( ) ) );
-
+					
 					//get total Hours between this 2 dates
 					double elapsedHours = (currentDatetime - rewardClaimDatetime).TotalHours;
 
