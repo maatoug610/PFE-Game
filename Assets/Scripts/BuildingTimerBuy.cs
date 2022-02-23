@@ -4,13 +4,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
+namespace DailyRewardSystem {
+public enum BuildBuyType {
+		Gems,
+	}
 public class BuildingTimerBuy : MonoBehaviour
 {
     [SerializeField] Text TimerBuild;
-    [SerializeField] Text StopTimer;
+    [SerializeField] GameObject DoneIcon;
     [SerializeField] GameObject BuilderNotification;
     //[SerializeField] Text TimerCounter;
     int c=0;
+      Animator m_Animator;
+    
     public static BuildingTimerBuy Instance {get; private set;}
 
     void Awake(){
@@ -24,6 +30,7 @@ public class BuildingTimerBuy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_Animator = gameObject.GetComponent<Animator>();
         c = PlayerPrefs.GetInt("c", 0);
         print("c ligne 26: "+c);
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
@@ -67,9 +74,9 @@ public class BuildingTimerBuy : MonoBehaviour
             //TimerBuild.text = c.ToString();
             TimerBuild.text = $"{c / 60:00}:{c % 60:00}";
             if(c == 30){ // 30 is Timer in seconds 60 = 1 muinte
-                string stopT = "End Timer Build";
                 BuilderNotification.SetActive ( true );
-                StopTimer.text = stopT.ToString();                                
+                DoneIcon.SetActive ( true );
+                m_Animator.SetBool("isBuild", true);
                 break;
 
             }
@@ -77,6 +84,21 @@ public class BuildingTimerBuy : MonoBehaviour
             
         }
     }
+
+ //Buy Button Build:
+	public void BuyButton(){ 
+	  
+           if(c >= 30 && GameData.Gems >= 1000){
+               print("BuyButton()");
+				GameData.Gems -= 1000;
+                //m_Animator.SetBool("isBuild", true);
+			}
+            else{
+                print("don't have money for that !!");
+                //m_Animator.SetBool("isBuild", false);
+
+            }
+	}
 
  
 
@@ -90,4 +112,5 @@ public class BuildingTimerBuy : MonoBehaviour
 
     
     
+}
 }

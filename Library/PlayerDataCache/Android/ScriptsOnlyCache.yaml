@@ -1,7 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BuildingTimerBuy
     - CameraController
+    - Chronometre_Canvas
     - DailyRewardSystem.DailyRewards
     - DailyRewardSystem.MoneyManager
     - RewardsDataBase
@@ -66,25 +68,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11976}
+      Script: {instanceID: 11786}
     - Class: 114
-      Script: {instanceID: 12020}
+      Script: {instanceID: 11978}
     - Class: 114
-      Script: {instanceID: 12108}
+      Script: {instanceID: 12022}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 12110}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12666}
+    - Class: 114
+      Script: {instanceID: 12752}
     - Class: 114
       Script: {instanceID: 13326}
     - Class: 114
       Script: {instanceID: 13420}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13586}
     - Class: 114
-      Script: {instanceID: 13808}
+      Script: {instanceID: 13668}
     - Class: 114
-      Script: {instanceID: 13854}
+      Script: {instanceID: 13810}
+    - Class: 114
+      Script: {instanceID: 13856}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -96,6 +102,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 210
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -146,7 +154,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 38df7b0d1cfd9ed60046d601ba0b1ed7
+      Hash: efc49652fce89f9b01bcde91c2983e94
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimerBar
@@ -234,6 +242,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: b805d9906ad2012139d822ecc21e7fa6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Chronometre_Canvas
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -446,7 +460,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 40d9d0b104dd472a8b71051e7bb6918e
+      Hash: 0b3cf8c60edd0724b90bb4f224d93f04
     assemblyName: Assembly-CSharp.dll
     namespaceName: DailyRewardSystem
     className: MoneyManager
@@ -462,6 +476,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 405a288cf19ceb4d9b2cf95f8272d93e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BuildingTimerBuy
   - hash:
       serializedVersion: 2
       Hash: db6e523bbb194d697db777bf3f7cd2af
@@ -567,4 +587,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/version 3.unity
-  playerPath: C:/Users/PC/PFE App/PFEtest.apk
+  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEtest2.apk

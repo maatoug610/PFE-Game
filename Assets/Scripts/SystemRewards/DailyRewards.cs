@@ -188,6 +188,8 @@ namespace DailyRewardSystem {
 		void OnCloseButtonClick ( ) {
 			rewardsCanvas.SetActive ( false );
 		}
+
+		
 	}
 
 }
