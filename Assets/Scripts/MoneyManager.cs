@@ -19,11 +19,9 @@ public class MoneyManager : MonoBehaviour
 
     public Text MoneyText;
     //public Text TimerText;
-    [SerializeField] private Image TimerImage;
-    [Space]
-    [SerializeField] private Text TimerText;
-	//[Header ( "FX" )]
-	//[SerializeField] ParticleSystem fxGems;
+    [SerializeField] private Image TimerImageResto;
+   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +35,8 @@ public class MoneyManager : MonoBehaviour
         MoneyText.text = GameData.Gems.ToString();
         //fxGems.Play ( );
         //MoneyText.text = Money.ToString();
-        TimerText.text = Timer.ToString("0.0");
-        TimerImage.fillAmount = Mathf.InverseLerp(0, TimeRest, Timer);
+        //TimerText.text = Timer.ToString("0.0");
+        TimerImageResto.fillAmount = Mathf.InverseLerp(0, TimeRest, Timer);
         if(StartTimer == 0 ){
             Timer = Timer - 1 * Time.deltaTime;
         }
