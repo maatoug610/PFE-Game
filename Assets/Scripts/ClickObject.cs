@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ClickObject : MonoBehaviour
 {
 
-     [SerializeField] private GameObject Canvas_Timer_Resto;
+     [SerializeField]  GameObject ChronometreShow;
   
      Ray ray;
      RaycastHit hit;
@@ -16,10 +16,10 @@ public class ClickObject : MonoBehaviour
          if(Physics.Raycast(ray, out hit))
          {
              if(Input.GetMouseButtonDown(0)){
-                 //Resto:
-                 if(hit.collider.name == "Resto"){
-                     //Canvas_Timer_Resto.SetActive(true);
-                 }
+                 
+                if(hit.collider.name == "TerrainBuild"){
+                  ChronometreShow.SetActive(true);
+               }
                 
              }
             

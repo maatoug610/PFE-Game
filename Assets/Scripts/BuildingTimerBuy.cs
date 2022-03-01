@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
+
 namespace DailyRewardSystem {
 public enum BuildBuyType {
 		Gems,
@@ -40,7 +41,6 @@ public class BuildingTimerBuy : MonoBehaviour
         c = PlayerPrefs.GetInt("c", 0);
         print("c ligne 26: "+c);
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
-
         if (!dateQuitString.Equals("")) {
            DateTime dateQuit = DateTime.Parse(dateQuitString);
            DateTime dateNow = DateTime.Now;
@@ -49,9 +49,7 @@ public class BuildingTimerBuy : MonoBehaviour
                print("dateQuit34: "+dateQuit);
                TimeSpan timespan = dateNow - dateQuit;
                print("TimeSpan: "+timespan);
-             
                int seconds = (int)timespan.Seconds; 
-              
                print("seconds40: "+seconds);
                if(c > 0){
                c += seconds; //ajouter le decalage 
@@ -63,9 +61,7 @@ public class BuildingTimerBuy : MonoBehaviour
         // StartCoroutine("Counter");
     }
  
-
     IEnumerator Counter(){
-        
         while(true){
             yield return new WaitForSeconds(1f);
             c++;
@@ -86,9 +82,7 @@ public class BuildingTimerBuy : MonoBehaviour
            if( GameData.Gems >= 1000){  
                StartCoroutine("Counter");
                Button.SetActive (false);
-               if( c == 20){
                GameData.Gems -= 1000;
-               }
 			}
             else if(GameData.Gems < 1000){
                 print("Don't Have Money For That !!");
@@ -104,11 +98,6 @@ public class BuildingTimerBuy : MonoBehaviour
         //PlayerPrefs.SetInt("c", c); //Save Time Text
         PlayerPrefs.SetInt("c", 0); //To Restart at zero 0
     }
-    // public void Home1Show(){
-    //     Build.SetActive(true);
-    // }
-    // public void Home1Hide(){
-    //     Build.SetActive(false);
-    // }   
+    
 }
 }
