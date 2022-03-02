@@ -21,9 +21,11 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject FinishedTimer;
     [SerializeField] GameObject MinusMoneyPanel;
     [SerializeField] GameObject PanelTimerBuild;
-    [Space]
-    [Header("Builing object")]
-    [SerializeField] GameObject Build1;
+    //[Space]
+    //[Header("Builing object")]
+    //[SerializeField] GameObject Build1;
+    //Animation :
+    //Animator m_Animator;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -32,13 +34,14 @@ public class BuilderSystem : MonoBehaviour
     int statusClicked=0;
     int StartCount=0;
     [Header("Time in second: 60s -> 1m")]
-    public int EndTime=60;
+    public int EndTime =60;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
+        //m_Animator = gameObject.GetComponent<Animator>();
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
         StartCount = PlayerPrefs.GetInt("StartCount", 0);
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
@@ -52,8 +55,7 @@ public class BuilderSystem : MonoBehaviour
                     StartCount += seconds;
                 }
             }
-            PlayerPrefs.SetString("dateQuit","");
-            
+            PlayerPrefs.SetString("dateQuit",""); 
         }
         //Tester of Button Status and Timer end :
         if(statusClicked == 1 && StartCount < EndTime){
@@ -62,6 +64,7 @@ public class BuilderSystem : MonoBehaviour
         }
         if(StartCount >= EndTime){
            FinishedTimer.SetActive(true); 
+           //m_Animator.SetBool("isBuild", true);
         }
     }
 
@@ -110,8 +113,8 @@ public class BuilderSystem : MonoBehaviour
         IconClose.SetActive(true);
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        Destroy(Build1);
+        //yield return new WaitForSeconds(2f);
+        //Destroy(Build1);
     }
     //Timer of Show MinusMoney Panel:
     IEnumerator EnableMinusMoneyPanel(){
