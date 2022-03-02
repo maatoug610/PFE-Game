@@ -11,14 +11,19 @@ public enum MoneyType {
 	}
 public class BuilderSystem : MonoBehaviour
 {
+
     [Header ( "Chronometre UI" )]
     [SerializeField] Text TimerBuild;
 	[SerializeField] GameObject ChronometreCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     [SerializeField] GameObject IconClose;
-    
-
+    [SerializeField] GameObject FinishedTimer;
+    [SerializeField] GameObject MinusMoneyPanel;
+    // Raycast to detected object :
+    Ray ray;
+    RaycastHit hit;
+    //Varibales
     public static BuilderSystem Instance {get; private set;}
     int statusClicked=0;
     int StartCount=0;
@@ -46,32 +51,51 @@ public class BuilderSystem : MonoBehaviour
             PlayerPrefs.SetString("dateQuit","");
             
         }
-        print(statusClicked);
-        if(statusClicked == 1){
+        //Tester of Button Status and Timer end :
+        if(statusClicked == 1 && StartCount < EndTime){
+            ButtonBuy.SetActive (false);
             StartCoroutine("Counter");
+            if(StartCount >= EndTime){
+                FinishedTimer.SetActive(true); 
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Code Of Detected object With mouse:
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         if(Physics.Raycast(ray, out hit))
+         {
+             if(Input.GetMouseButtonDown(0)){
+                 
+                if(hit.collider.name == "TerrainBuild"){
+                  ChronometreCanvas.SetActive(true);
+               }
+                
+             }
+            
+         }
     }
-    
+    // Button of Start Count Timer:
     public void StartCounter(){
-        
-        if( GameData.Gems >= 1000){
+        if(StartCount < EndTime){
+        if(GameData.Gems >= 1000){
+            
             GameData.Gems -= 1000;
             StartCoroutine("Counter");
             ButtonBuy.SetActive (false);
             statusClicked = 1;
             PlayerPrefs.SetInt("statusClicked",statusClicked);
 
-        }
-        else{
+        }else{
             Debug.Log("Don't Have Money For That !!!");
+            StartCoroutine("EnableMinusMoneyPanel");
+        }
         }
     }
+    //Counter Timer Of Building:
     IEnumerator Counter (){
         while(StartCount != EndTime){
             yield return new WaitForSeconds(1f);
@@ -81,19 +105,26 @@ public class BuilderSystem : MonoBehaviour
         }
         IconClose.SetActive(true);
     }
+    //Timer of Show MinusMoney Panel:
+    IEnumerator EnableMinusMoneyPanel(){
+        MinusMoneyPanel.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        MinusMoneyPanel.SetActive(false);
+    }
 
+    //when application is quit:
     void OnApplicationQuit(){
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
         PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
     }
-    
+       
     void Initialize ( ) {
 		closeButton.onClick.RemoveAllListeners ( );
 		closeButton.onClick.AddListener ( OnCloseButtonClick );
     }
-
+    //open canvas timer build 1:
 	void OnCloseButtonClick ( ) {
 		ChronometreCanvas.SetActive ( false );
 	}
