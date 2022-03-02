@@ -4894,6 +4894,7 @@ MonoBehaviour:
   IconClose: {fileID: 1328194220}
   FinishedTimer: {fileID: 510766425}
   MinusMoneyPanel: {fileID: 317889235}
+  PanelTimerBuild: {fileID: 1691185982}
   EndTime: 60
 --- !u!1 &1398540666
 GameObject:

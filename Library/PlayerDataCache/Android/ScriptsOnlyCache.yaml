@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraController
-    - Chronometre_Canvas
     - ClickObject
     - DailyRewardSystem.BuildingTimerBuy
     - DailyRewardSystem.DailyRewards
@@ -10,14 +9,6 @@ ScriptsOnlyBuild:
     - RewardsDataBase
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -60,8 +51,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -71,13 +60,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11348}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11564}
     - Class: 114
-      Script: {instanceID: 11608}
-    - Class: 114
-      Script: {instanceID: 11786}
+      Script: {instanceID: 11610}
     - Class: 114
       Script: {instanceID: 11978}
     - Class: 114
@@ -85,23 +72,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12110}
     - Class: 114
-      Script: {instanceID: 12666}
+      Script: {instanceID: 12668}
     - Class: 114
-      Script: {instanceID: 12752}
+      Script: {instanceID: 12754}
     - Class: 114
-      Script: {instanceID: 12784}
+      Script: {instanceID: 12786}
     - Class: 114
-      Script: {instanceID: 13326}
+      Script: {instanceID: 13328}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13422}
     - Class: 114
-      Script: {instanceID: 13586}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13670}
     - Class: 114
-      Script: {instanceID: 13810}
+      Script: {instanceID: 13812}
     - Class: 114
-      Script: {instanceID: 13856}
+      Script: {instanceID: 13858}
+    - Class: 114
+      Script: {instanceID: 34052}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,12 +244,6 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: b805d9906ad2012139d822ecc21e7fa6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Chronometre_Canvas
-  - hash:
-      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -351,6 +334,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: c3a94bf6e2d4edf279a2bb9d71d1b7fe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: BuilderSystemSpace
+    className: BuilderSystem
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -387,7 +376,7 @@ ScriptsOnlyBuild:
     className: RewardsDataBase
   - hash:
       serializedVersion: 2
-      Hash: bdc0377e6c72e5b16142c7ed9201a9cb
+      Hash: e1837aa8f0ba22ae1335154af5162ba3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClickObject
@@ -471,7 +460,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0b3cf8c60edd0724b90bb4f224d93f04
+      Hash: 7cd5045faa87b17a1a9658d987c70d66
     assemblyName: Assembly-CSharp.dll
     namespaceName: DailyRewardSystem
     className: MoneyManager
@@ -489,7 +478,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 1e09a68e12ecf2239d7c8deaf9f29ca2
+      Hash: 1236b3185eed755300afebdddac8537a
     assemblyName: Assembly-CSharp.dll
     namespaceName: DailyRewardSystem
     className: BuildingTimerBuy

@@ -20,6 +20,10 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject IconClose;
     [SerializeField] GameObject FinishedTimer;
     [SerializeField] GameObject MinusMoneyPanel;
+    [SerializeField] GameObject PanelTimerBuild;
+    [Space]
+    [Header("Builing object")]
+    [SerializeField] GameObject Build1;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -55,9 +59,9 @@ public class BuilderSystem : MonoBehaviour
         if(statusClicked == 1 && StartCount < EndTime){
             ButtonBuy.SetActive (false);
             StartCoroutine("Counter");
-            if(StartCount >= EndTime){
-                FinishedTimer.SetActive(true); 
-            }
+        }
+        if(StartCount >= EndTime){
+           FinishedTimer.SetActive(true); 
         }
     }
 
@@ -72,6 +76,7 @@ public class BuilderSystem : MonoBehaviour
                  
                 if(hit.collider.name == "TerrainBuild"){
                   ChronometreCanvas.SetActive(true);
+                  
                }
                 
              }
@@ -82,7 +87,6 @@ public class BuilderSystem : MonoBehaviour
     public void StartCounter(){
         if(StartCount < EndTime){
         if(GameData.Gems >= 1000){
-            
             GameData.Gems -= 1000;
             StartCoroutine("Counter");
             ButtonBuy.SetActive (false);
@@ -104,6 +108,10 @@ public class BuilderSystem : MonoBehaviour
             TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
         }
         IconClose.SetActive(true);
+        PanelTimerBuild.SetActive(false);
+        FinishedTimer.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        Destroy(Build1);
     }
     //Timer of Show MinusMoney Panel:
     IEnumerator EnableMinusMoneyPanel(){
