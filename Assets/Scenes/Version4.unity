@@ -2872,7 +2872,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 93226642}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &786618792
+--- !u!95 &786618791
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -2891,6 +2891,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &786618792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786618789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35f9a27c3577f94ea5b598eb5ee5544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerBuild: {fileID: 741876314}
+  ChronometreCanvas: {fileID: 419887391}
+  closeButton: {fileID: 1370976906}
+  ButtonBuy: {fileID: 471172256}
+  IconClose: {fileID: 1328194220}
+  FinishedTimer: {fileID: 510766425}
+  MinusMoneyPanel: {fileID: 317889235}
+  PanelTimerBuild: {fileID: 1691185982}
+  EndTime: 30
 --- !u!1 &797990735
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,7 +4567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740313fcd8d5cc7409e08f03c936e417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyAdded: 250
+  MoneyAdded: 1000
   Timer: 20
   StartTimer: 0
   TimeRest: 10
@@ -5128,7 +5149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389576644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a35f9a27c3577f94ea5b598eb5ee5544, type: 3}
   m_Name: 
@@ -5141,7 +5162,7 @@ MonoBehaviour:
   FinishedTimer: {fileID: 510766425}
   MinusMoneyPanel: {fileID: 317889235}
   PanelTimerBuild: {fileID: 1691185982}
-  EndTime: 8640
+  EndTime: 30
 --- !u!1 &1398540666
 GameObject:
   m_ObjectHideFlags: 0

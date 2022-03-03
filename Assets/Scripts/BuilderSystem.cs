@@ -25,7 +25,7 @@ public class BuilderSystem : MonoBehaviour
     //[Header("Builing object")]
     //[SerializeField] GameObject Build1;
     //Animation :
-    //Animator m_Animator;
+    Animator m_Animator;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -41,22 +41,27 @@ public class BuilderSystem : MonoBehaviour
     void Start()
     {
         Initialize();
-        //m_Animator = gameObject.GetComponent<Animator>();
+        m_Animator = gameObject.GetComponent<Animator>();
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
         StartCount = PlayerPrefs.GetInt("StartCount", 0);
+        
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
         if (!dateQuitString.Equals("")) {
             DateTime dateQuit = DateTime.Parse(dateQuitString);
             DateTime dateNow = DateTime.Now;
             if (dateNow > dateQuit){
                 TimeSpan timespan = dateNow - dateQuit;
-                int seconds = (int)timespan.Seconds;
-                if(StartCount > 0){
-                    StartCount += seconds;
-                }
+                //int seconds = (int)timespan.Seconds;
+                int seconds = (int)timespan.TotalSeconds;
+                StartCount += seconds;
+                // if(StartCount > 0){
+                //     StartCount += seconds;
+                // }
             }
             PlayerPrefs.SetString("dateQuit",""); 
         }
+
+        
         //Tester of Button Status and Timer end :
         if(statusClicked == 1 && StartCount < EndTime){
             ButtonBuy.SetActive (false);
@@ -64,7 +69,7 @@ public class BuilderSystem : MonoBehaviour
         }
         if(StartCount >= EndTime){
            FinishedTimer.SetActive(true); 
-           //m_Animator.SetBool("isBuild", true);
+           m_Animator.SetBool("isBuilding", true);
         }
     }
 
@@ -79,7 +84,6 @@ public class BuilderSystem : MonoBehaviour
                  
                 if(hit.collider.name == "TerrainBuild"){
                   ChronometreCanvas.SetActive(true);
-                  
                }
                 
              }
@@ -113,8 +117,10 @@ public class BuilderSystem : MonoBehaviour
         IconClose.SetActive(true);
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
-        //yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(1f);
         //Destroy(Build1);
+        m_Animator.SetBool("isBuilding", true);
+        
     }
     //Timer of Show MinusMoney Panel:
     IEnumerator EnableMinusMoneyPanel(){

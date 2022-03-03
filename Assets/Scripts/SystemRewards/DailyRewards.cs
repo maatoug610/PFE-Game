@@ -97,6 +97,7 @@ namespace DailyRewardSystem {
 					
 					//get total Hours between this 2 dates
 					double elapsedHours = (currentDatetime - rewardClaimDatetime).TotalHours;
+					
 
 					if ( elapsedHours >= nextRewardDelay )
 						ActivateReward ( );
