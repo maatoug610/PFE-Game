@@ -19,7 +19,9 @@ public class MoneyManager : MonoBehaviour
 
     public Text MoneyText;
     //public Text TimerText;
+    [Header("Image Timer")]
     [SerializeField] private Image TimerImageResto;
+    
    
     
 
@@ -36,7 +38,10 @@ public class MoneyManager : MonoBehaviour
         //fxGems.Play ( );
         //MoneyText.text = Money.ToString();
         //TimerText.text = Timer.ToString("0.0");
+
+        //Resto Timer:
         TimerImageResto.fillAmount = Mathf.InverseLerp(0, TimeRest, Timer);
+        
         if(StartTimer == 0 ){
             Timer = Timer - 1 * Time.deltaTime;
         }
@@ -48,13 +53,10 @@ public class MoneyManager : MonoBehaviour
             StartTimer = 0;
         }
     }
-
+   
     public void StartBtnClicked(){
         StartTimer = 1;
     }
 
-    // public void ClaimMoney(){
-    //     MoneyText.text = Money.ToString("C2");
-    // }
 }
 }
