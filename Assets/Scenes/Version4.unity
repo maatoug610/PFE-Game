@@ -454,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Build1
       objectReference: {fileID: 0}
+    - target: {fileID: 1212380520111254, guid: 562df8355904213468a690c4ce6740b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4541227407256296, guid: 562df8355904213468a690c4ce6740b6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -476,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4541227407256296, guid: 562df8355904213468a690c4ce6740b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.9
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4541227407256296, guid: 562df8355904213468a690c4ce6740b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2417,6 +2421,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565826669}
   m_CullTransparentMesh: 0
+--- !u!1 &659475611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1282587026986886, guid: 7446a392a730ac14d9cc70d21cf7ace0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725159322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &681121824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2872,46 +2882,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 93226642}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &786618791
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786618789}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aa7fbbc2db319bc44b4c8f25eb9e8b7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &786618792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786618789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a35f9a27c3577f94ea5b598eb5ee5544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerBuild: {fileID: 741876314}
-  ChronometreCanvas: {fileID: 419887391}
-  closeButton: {fileID: 1370976906}
-  ButtonBuy: {fileID: 471172256}
-  IconClose: {fileID: 1328194220}
-  FinishedTimer: {fileID: 510766425}
-  MinusMoneyPanel: {fileID: 317889235}
-  PanelTimerBuild: {fileID: 1691185982}
-  EndTime: 30
 --- !u!1 &797990735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,7 +5119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389576644}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a35f9a27c3577f94ea5b598eb5ee5544, type: 3}
   m_Name: 
@@ -5162,6 +5132,8 @@ MonoBehaviour:
   FinishedTimer: {fileID: 510766425}
   MinusMoneyPanel: {fileID: 317889235}
   PanelTimerBuild: {fileID: 1691185982}
+  Build1: {fileID: 786618789}
+  TerrainBuild: {fileID: 659475611}
   EndTime: 30
 --- !u!1 &1398540666
 GameObject:

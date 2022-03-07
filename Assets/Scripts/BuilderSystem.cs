@@ -21,11 +21,11 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject FinishedTimer;
     [SerializeField] GameObject MinusMoneyPanel;
     [SerializeField] GameObject PanelTimerBuild;
-    //[Space]
-    //[Header("Builing object")]
-    //[SerializeField] GameObject Build1;
-    //Animation :
-    Animator m_Animator;
+    [Space]
+    [Header("Builing object")]
+    [SerializeField] GameObject Build1;
+    [SerializeField] GameObject TerrainBuild;
+    
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -41,7 +41,7 @@ public class BuilderSystem : MonoBehaviour
     void Start()
     {
         Initialize();
-        m_Animator = gameObject.GetComponent<Animator>();
+        
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
         StartCount = PlayerPrefs.GetInt("StartCount", 0);
         
@@ -68,8 +68,9 @@ public class BuilderSystem : MonoBehaviour
             StartCoroutine("Counter");
         }
         if(StartCount >= EndTime){
-           FinishedTimer.SetActive(true); 
-           m_Animator.SetBool("isBuilding", true);
+           //FinishedTimer.SetActive(true); 
+           Destroy(TerrainBuild);
+           Build1.SetActive(true);
         }
     }
 
@@ -113,14 +114,17 @@ public class BuilderSystem : MonoBehaviour
             StartCount++;
             Debug.Log(StartCount);
             TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
+            
         }
         IconClose.SetActive(true);
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
-        //yield return new WaitForSeconds(1f);
-        //Destroy(Build1);
-        m_Animator.SetBool("isBuilding", true);
-        
+        yield return new WaitForSeconds(1f);
+        Destroy(TerrainBuild);
+        Build1.SetActive(true);
+        //save Build active:
+
+
     }
     //Timer of Show MinusMoney Panel:
     IEnumerator EnableMinusMoneyPanel(){
@@ -135,7 +139,30 @@ public class BuilderSystem : MonoBehaviour
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
         PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
+        PlayerPrefs.Save();
     }
+
+    //Destroy:
+    void OnDestroy(){
+        DateTime dateQuit = DateTime.Now;
+        PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
+        PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
+        PlayerPrefs.SetInt("statusClicked",statusClicked);
+        PlayerPrefs.Save();
+    }
+
+    //Paues:
+     void OnApplicationPause(bool pauseStatus){
+         Debug.Log("The Application is paused: "+ pauseStatus);
+         if (pauseStatus)
+        {
+            DateTime dateQuit = DateTime.Now;
+            PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
+            PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
+            PlayerPrefs.SetInt("statusClicked",statusClicked);
+            PlayerPrefs.Save();
+        }
+     }
        
     void Initialize ( ) {
 		closeButton.onClick.RemoveAllListeners ( );

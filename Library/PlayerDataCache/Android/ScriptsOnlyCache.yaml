@@ -55,15 +55,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -342,7 +336,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 366913a087a66c0189fb55f08eb4e4fd
+      Hash: 95456e22991926d483bea7433928ea36
     assemblyName: Assembly-CSharp.dll
     namespaceName: BuilderSystemSpace
     className: BuilderSystem
@@ -601,4 +595,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Version4.unity
-  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEtest4.apk
+  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEtest6.apk
