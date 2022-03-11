@@ -83,7 +83,8 @@ public class BuilderSystem : MonoBehaviour
          {
              if(Input.GetMouseButtonDown(0)){
                  
-                if(hit.collider.name == "TerrainBuild"){
+                if(hit.collider.name == "barrel"){
+                    print("Detected");
                   ChronometreCanvas.SetActive(true);
                }
                 

@@ -5,17 +5,22 @@ ScriptsOnlyBuild:
     - BuilderSystemSpace.BuilderSystem
     - ClickObject
     - DailyRewardSystem.DailyRewards
-    - DailyRewardSystem.MoneyManager
+    - DailyRewardSystem.RestoMoneyManager
+    - MallMoneyManager
     - RewardsDataBase
+    - TimerNow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -51,6 +56,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -64,35 +71,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 11354}
     - Class: 114
-      Script: {instanceID: 11564}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11610}
+      Script: {instanceID: 11572}
     - Class: 114
-      Script: {instanceID: 12022}
+      Script: {instanceID: 11618}
     - Class: 114
-      Script: {instanceID: 12110}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 12436}
+      Script: {instanceID: 12120}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12164}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12788}
+      Script: {instanceID: 12680}
     - Class: 114
-      Script: {instanceID: 13330}
+      Script: {instanceID: 12766}
     - Class: 114
-      Script: {instanceID: 13424}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 13672}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13814}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13860}
+      Script: {instanceID: 13342}
+    - Class: 114
+      Script: {instanceID: 13436}
+    - Class: 114
+      Script: {instanceID: 13550}
+    - Class: 114
+      Script: {instanceID: 13684}
+    - Class: 114
+      Script: {instanceID: 13826}
+    - Class: 114
+      Script: {instanceID: 13872}
+    - Class: 114
+      Script: {instanceID: 51150}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -124,6 +143,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 91e87de0024b9f629ae182944b4d5896
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Water
   - hash:
       serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
@@ -174,6 +199,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: d22d3ca3b5d4cb21c3d020cd0be7a005
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MallMoneyManager
+  - hash:
+      serializedVersion: 2
       Hash: aeb62f729c52c814dec86c47dcac1471
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -202,6 +233,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 8860633d29a22ff64e02e18da3716cdf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityTemplateProjects
+    className: SimpleCameraController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -471,7 +508,7 @@ ScriptsOnlyBuild:
       Hash: 7cd5045faa87b17a1a9658d987c70d66
     assemblyName: Assembly-CSharp.dll
     namespaceName: DailyRewardSystem
-    className: MoneyManager
+    className: RestoMoneyManager
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -592,7 +629,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: eb8b5249438f9ba579b5786918098ac1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimerNow
   platform: 13
   scenePathNames:
   - Assets/Scenes/Version4.unity
-  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEtest6.apk
+  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEtest7.apk
