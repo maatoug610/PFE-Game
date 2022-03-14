@@ -17,7 +17,7 @@ public class BuilderSystem : MonoBehaviour
 	[SerializeField] GameObject ChronometreCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
-    [SerializeField] GameObject IconClose;
+    
     [SerializeField] GameObject FinishedTimer;
     [SerializeField] GameObject MinusMoneyPanel;
     [SerializeField] GameObject PanelTimerBuild;
@@ -32,9 +32,12 @@ public class BuilderSystem : MonoBehaviour
     //Varibales
     public static BuilderSystem Instance {get; private set;}
     int statusClicked=0;
-    int StartCount=0;
+    //int StartCount=0;
+    //public int EndTime =60;
     [Header("Time in second: 60s -> 1m")]
-    public int EndTime =60;
+    public int start =21600; // 6h
+    
+
 
 
     // Start is called before the first frame update
@@ -43,7 +46,8 @@ public class BuilderSystem : MonoBehaviour
         Initialize();
         
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
-        StartCount = PlayerPrefs.GetInt("StartCount", 0);
+        start = PlayerPrefs.GetInt("start", start);
+        //StartCount = PlayerPrefs.GetInt("StartCount", 0);
         
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
         if (!dateQuitString.Equals("")) {
@@ -53,7 +57,9 @@ public class BuilderSystem : MonoBehaviour
                 TimeSpan timespan = dateNow - dateQuit;
                 //int seconds = (int)timespan.Seconds;
                 int seconds = (int)timespan.TotalSeconds;
-                StartCount += seconds;
+                start -= seconds;
+                //StartCount += seconds;
+
                 // if(StartCount > 0){
                 //     StartCount += seconds;
                 // }
@@ -63,11 +69,11 @@ public class BuilderSystem : MonoBehaviour
 
         
         //Tester of Button Status and Timer end :
-        if(statusClicked == 1 && StartCount < EndTime){
+        if(statusClicked == 1 && start > 0){
             ButtonBuy.SetActive (false);
             StartCoroutine("Counter");
         }
-        if(StartCount >= EndTime){
+        if(start <= 0){
            //FinishedTimer.SetActive(true); 
            Destroy(TerrainBuild);
            Build1.SetActive(true);
@@ -83,9 +89,8 @@ public class BuilderSystem : MonoBehaviour
          {
              if(Input.GetMouseButtonDown(0)){
                  
-                if(hit.collider.name == "barrel"){
-                    print("Detected");
-                  ChronometreCanvas.SetActive(true);
+                if(hit.collider.tag == "Terrain_Building"){
+                    ChronometreCanvas.SetActive(true);
                }
                 
              }
@@ -94,7 +99,7 @@ public class BuilderSystem : MonoBehaviour
     }
     // Button of Start Count Timer:
     public void StartCounter(){
-        if(StartCount < EndTime){
+        if(start > 0){
         if(GameData.Gems >= 1000){
             GameData.Gems -= 1000;
             StartCoroutine("Counter");
@@ -110,23 +115,29 @@ public class BuilderSystem : MonoBehaviour
     }
     //Counter Timer Of Building:
     IEnumerator Counter (){
-        while(StartCount != EndTime){
-            yield return new WaitForSeconds(1f);
-            StartCount++;
-            Debug.Log(StartCount);
-            TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
+        // while(StartCount != EndTime){
+        //     yield return new WaitForSeconds(1f);
+        //     StartCount++;
+        //     Debug.Log(StartCount);
+        //     TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
             
+        // }
+        while(start > 0){
+            yield return new WaitForSeconds(1f);
+            start --;
+            Debug.Log(start);
+            TimerBuild.text = $"{(start / 3600) % 24}:{(start / 60) % 60}:{start % 60}";
         }
-        IconClose.SetActive(true);
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
         yield return new WaitForSeconds(1f);
         Destroy(TerrainBuild);
         Build1.SetActive(true);
         //save Build active:
-
-
     }
+    //Counter Timer From 6h to 0:
+    
+    
     //Timer of Show MinusMoney Panel:
     IEnumerator EnableMinusMoneyPanel(){
         MinusMoneyPanel.SetActive(true);
@@ -138,7 +149,7 @@ public class BuilderSystem : MonoBehaviour
     void OnApplicationQuit(){
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-        PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
+        PlayerPrefs.SetInt("start", start); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
         PlayerPrefs.Save();
     }
@@ -147,23 +158,23 @@ public class BuilderSystem : MonoBehaviour
     void OnDestroy(){
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-        PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
+        PlayerPrefs.SetInt("start", start); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
         PlayerPrefs.Save();
     }
 
-    //Paues:
-     void OnApplicationPause(bool pauseStatus){
-         Debug.Log("The Application is paused: "+ pauseStatus);
-         if (pauseStatus)
-        {
-            DateTime dateQuit = DateTime.Now;
-            PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-            PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
-            PlayerPrefs.SetInt("statusClicked",statusClicked);
-            PlayerPrefs.Save();
-        }
-     }
+    // //Paues:
+    //  void OnApplicationPause(bool pauseStatus){
+    //      Debug.Log("The Application is paused: "+ pauseStatus);
+    //      if (pauseStatus)
+    //     {
+    //         DateTime dateQuit = DateTime.Now;
+    //         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
+    //         PlayerPrefs.SetInt("start", start); //Save Time Text
+    //         PlayerPrefs.SetInt("statusClicked",statusClicked);
+    //         PlayerPrefs.Save();
+    //     }
+    //  }
        
     void Initialize ( ) {
 		closeButton.onClick.RemoveAllListeners ( );
