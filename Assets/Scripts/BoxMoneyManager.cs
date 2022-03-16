@@ -9,6 +9,10 @@ public class BoxMoneyManager : MonoBehaviour
 {
     [Header ("Money Icon UI")]
     [SerializeField] GameObject IconMoney;
+    [Space]
+		[Header ( "FX" )]
+		
+		[SerializeField] ParticleSystem fxGems;
     public float Timer = 6;
     public int StartTimer = 0;
     public Text MoneyText;
@@ -35,6 +39,7 @@ public class BoxMoneyManager : MonoBehaviour
     }
 
     public void BtnStart(){
+        fxGems.Play ( );
         GameData.Gems = GameData.Gems + (int) MoneyAdded;
         IconMoney.SetActive(false);
         StartTimer = 0;

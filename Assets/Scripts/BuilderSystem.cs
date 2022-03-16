@@ -14,7 +14,7 @@ public class BuilderSystem : MonoBehaviour
 
     [Header ( "Chronometre UI" )]
     [SerializeField] Text TimerBuild;
-	[SerializeField] GameObject ChronometreCanvas;
+    [SerializeField] GameObject ChronometreCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -35,7 +35,9 @@ public class BuilderSystem : MonoBehaviour
     //int StartCount=0;
     //public int EndTime =60;
     [Header("Time in second: 60s -> 1m")]
-    public int start =21600; // 6h
+    // 6h -> 21600s
+    // 3day -> 259200
+    public int start=21600; 
     
 
 
@@ -97,11 +99,11 @@ public class BuilderSystem : MonoBehaviour
             
          }
     }
-    // Button of Start Count Timer:
+    // Button of Start Count Timer1:
     public void StartCounter(){
         if(start > 0){
-        if(GameData.Gems >= 1000){
-            GameData.Gems -= 1000;
+        if(GameData.Gems >= 500){
+            GameData.Gems -= 500;
             StartCoroutine("Counter");
             ButtonBuy.SetActive (false);
             statusClicked = 1;
@@ -113,6 +115,9 @@ public class BuilderSystem : MonoBehaviour
         }
         }
     }
+
+   
+
     //Counter Timer Of Building:
     IEnumerator Counter (){
         // while(StartCount != EndTime){
@@ -126,8 +131,9 @@ public class BuilderSystem : MonoBehaviour
             yield return new WaitForSeconds(1f);
             start --;
             Debug.Log(start);
-            TimerBuild.text = $"{(start / 3600) % 24}:{(start / 60) % 60}:{start % 60}";
+            TimerBuild.text = $"{(start / 3600) % 24}H:{(start / 60) % 60}m:{start % 60}s";
         }
+        
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
         yield return new WaitForSeconds(1f);

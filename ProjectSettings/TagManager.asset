@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Resto
   - Terrain_Building
+  - Terrain_Building2
   layers:
   - Default
   - TransparentFX
