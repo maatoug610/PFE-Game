@@ -5,11 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace DailyRewardSystem {
 
-public enum GemsType {
-		Gems,
-	}
 
 public class RestoMoneyManager : MonoBehaviour
 {
@@ -38,7 +34,7 @@ public class RestoMoneyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        //MoneyText.text = GameData.Gems.ToString();
+        MoneyText.text = GameData.Gems.ToString();
         // if(GameData.Gems >=1000){
         //     GameData.Gems = string.Format("{0}K",(GameData.Gems/1000));
         //     }
@@ -61,5 +57,4 @@ public class RestoMoneyManager : MonoBehaviour
         StartTimer = 1;
     }
 
-}
 }

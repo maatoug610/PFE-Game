@@ -5,10 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-namespace BuilderSystemSpace {
-public enum MoneyType {
-		Gems,
-	}
+
 public class BuilderSystem : MonoBehaviour
 {
 
@@ -25,21 +22,26 @@ public class BuilderSystem : MonoBehaviour
     [Header("Builing object")]
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
-    
+    [Header("Time in second: 60s -> 1m")]// 6h -> 21600s// 3day -> 259200
+    public int StartCount=21600; 
+    //int StartCount = 0;
+    //public int EndTime = 21600;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
     //Varibales
     public static BuilderSystem Instance {get; private set;}
     int statusClicked=0;
-    //int StartCount=0;
-    //public int EndTime =60;
-    [Header("Time in second: 60s -> 1m")]
-    // 6h -> 21600s
-    // 3day -> 259200
-    public int start=21600; 
     
-
+    
+    void Awake(){
+        if(Instance == null){
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else{
+            Destroy(gameObject);
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -48,35 +50,34 @@ public class BuilderSystem : MonoBehaviour
         Initialize();
         
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
-        start = PlayerPrefs.GetInt("start", start);
+        StartCount = PlayerPrefs.GetInt("StartCount", StartCount);
+        print(StartCount);
         //StartCount = PlayerPrefs.GetInt("StartCount", 0);
-        
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
         if (!dateQuitString.Equals("")) {
             DateTime dateQuit = DateTime.Parse(dateQuitString);
             DateTime dateNow = DateTime.Now;
-            if (dateNow > dateQuit){
+            if (dateNow > dateQuit && statusClicked == 1 && StartCount > 0){
+               
                 TimeSpan timespan = dateNow - dateQuit;
                 //int seconds = (int)timespan.Seconds;
                 int seconds = (int)timespan.TotalSeconds;
-                start -= seconds;
+                StartCount -= seconds;
                 //StartCount += seconds;
-
-                // if(StartCount > 0){
-                //     StartCount += seconds;
-                // }
             }
             PlayerPrefs.SetString("dateQuit",""); 
         }
 
         
         //Tester of Button Status and Timer end :
-        if(statusClicked == 1 && start > 0){
+        if(statusClicked == 1 && StartCount > 0){
+        //if(statusClicked == 1 && StartCount < EndTime){
             ButtonBuy.SetActive (false);
             StartCoroutine("Counter");
         }
-        if(start <= 0){
-           //FinishedTimer.SetActive(true); 
+        if(StartCount <= 0){
+        //if(StartCount >= EndTime){
+           FinishedTimer.SetActive(true); 
            Destroy(TerrainBuild);
            Build1.SetActive(true);
         }
@@ -101,7 +102,8 @@ public class BuilderSystem : MonoBehaviour
     }
     // Button of Start Count Timer1:
     public void StartCounter(){
-        if(start > 0){
+        if(StartCount > 0){
+        //if(StartCount < EndTime){
         if(GameData.Gems >= 500){
             GameData.Gems -= 500;
             StartCoroutine("Counter");
@@ -124,24 +126,25 @@ public class BuilderSystem : MonoBehaviour
         //     yield return new WaitForSeconds(1f);
         //     StartCount++;
         //     Debug.Log(StartCount);
-        //     TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
+        //     //TimerBuild.text = $"{StartCount / 60:00}:{StartCount % 60:00}";
+        //     TimerBuild.text = $"{(StartCount / 3600) % 24}H:{(StartCount / 60) % 60}m:{StartCount % 60}s";
             
         // }
-        while(start > 0){
+        while(StartCount > 0){
             yield return new WaitForSeconds(1f);
-            start --;
-            Debug.Log(start);
-            TimerBuild.text = $"{(start / 3600) % 24}H:{(start / 60) % 60}m:{start % 60}s";
+            StartCount --;
+            Debug.Log(StartCount);
+            TimerBuild.text = $"{(StartCount / 3600) % 24}H:{(StartCount / 60) % 60}m:{StartCount % 60}s";
         }
         
         PanelTimerBuild.SetActive(false);
         FinishedTimer.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(TerrainBuild);
         Build1.SetActive(true);
         //save Build active:
     }
-    //Counter Timer From 6h to 0:
+    
     
     
     //Timer of Show MinusMoney Panel:
@@ -151,36 +154,33 @@ public class BuilderSystem : MonoBehaviour
         MinusMoneyPanel.SetActive(false);
     }
 
-    //when application is quit:
-    void OnApplicationQuit(){
+    //SAVE DATA:
+    void saveDATA(){
         DateTime dateQuit = DateTime.Now;
-        PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-        PlayerPrefs.SetInt("start", start); //Save Time Text
+        PlayerPrefs.SetString("dateQuit",dateQuit.ToString());
+        PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
         PlayerPrefs.Save();
     }
 
-    //Destroy:
+    // when application is quit:
+     void OnApplicationQuit(){
+        saveDATA();
+    }
+
+    //when application is destroyed:
     void OnDestroy(){
-        DateTime dateQuit = DateTime.Now;
-        PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-        PlayerPrefs.SetInt("start", start); //Save Time Text
-        PlayerPrefs.SetInt("statusClicked",statusClicked);
-        PlayerPrefs.Save();
+        saveDATA();
     }
-
-    // //Paues:
-    //  void OnApplicationPause(bool pauseStatus){
-    //      Debug.Log("The Application is paused: "+ pauseStatus);
-    //      if (pauseStatus)
-    //     {
-    //         DateTime dateQuit = DateTime.Now;
-    //         PlayerPrefs.SetString("dateQuit", dateQuit.ToString()); // Save date Quit game
-    //         PlayerPrefs.SetInt("start", start); //Save Time Text
-    //         PlayerPrefs.SetInt("statusClicked",statusClicked);
-    //         PlayerPrefs.Save();
-    //     }
-    //  }
+   
+    //when application is Paused:
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            saveDATA();
+        }
+    }
        
     void Initialize ( ) {
 		closeButton.onClick.RemoveAllListeners ( );
@@ -190,5 +190,4 @@ public class BuilderSystem : MonoBehaviour
 	void OnCloseButtonClick ( ) {
 		ChronometreCanvas.SetActive ( false );
 	}
-}
 }

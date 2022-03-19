@@ -97,7 +97,7 @@ namespace DailyRewardSystem {
 					
 					//get total Hours between this 2 dates
 					double elapsedHours = (currentDatetime - rewardClaimDatetime).TotalHours;
-					
+					//double elapsedHours = (currentDatetime - rewardClaimDatetime).TotalSeconds;
 
 					if ( elapsedHours >= nextRewardDelay )
 						ActivateReward ( );
@@ -132,7 +132,6 @@ namespace DailyRewardSystem {
 
 		void DesactivateReward ( ) {
 			isRewardReady = false;
-
 			noMoreRewardsPanel.SetActive ( true );
 			rewardsNotification.SetActive ( false );
 		}
@@ -141,26 +140,25 @@ namespace DailyRewardSystem {
 			Reward reward = rewardsDB.GetReward ( nextRewardIndex );
 
 			//check reward type
-			
-
 		 if ( reward.Type == RewardType.Coins ) {
 				Debug.Log ( "<color=yellow>" + reward.Type.ToString ( ) + " Claimed : </color>+" + reward.Amount );
 				GameData.Coins += reward.Amount;
-				fxCoins.Play ( );
+				//fxCoins.Play ( );
 				UpdateCoinsTextUI ( );
 
-			} else {//reward.Type == RewardType.Gems
+			} else if(reward.Type == RewardType.Gems){//
 				Debug.Log ( "<color=green>" + reward.Type.ToString ( ) + " Claimed : </color>+" + reward.Amount );
 				GameData.Gems += reward.Amount;
-				fxGems.Play ( );
+				//fxGems.Play ( );
 				UpdateGemsTextUI ( );
 				isRewardReady = false;
 			}
 
 			//Save next reward index
 			nextRewardIndex++;
-			if ( nextRewardIndex >= rewardsDB.rewardsCount )
+			if ( nextRewardIndex >= rewardsDB.rewardsCount ){
 				nextRewardIndex = 0;
+			}
 
 			PlayerPrefs.SetInt ( "Next_Reward_Index", nextRewardIndex );
 
