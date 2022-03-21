@@ -152,7 +152,7 @@ public class BuilderSystemBurger : MonoBehaviour
     }
     
 
-     void Initialize ( ) {
+    void Initialize ( ) {
 		closeButton.onClick.RemoveAllListeners ( );
 		closeButton.onClick.AddListener ( OnCloseButtonClick );
     }

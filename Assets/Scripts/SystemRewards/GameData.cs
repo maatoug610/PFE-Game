@@ -5,11 +5,14 @@ public static class GameData {
 	private static int _coins = 0;
 	private static int _gems = 0;
 
+
 	//Static Constructor to load data from playerPrefs
+	
 	static GameData ( ) {
 		
 		_coins = PlayerPrefs.GetInt ( "Coins", 0 );
 		_gems = PlayerPrefs.GetInt ( "Gems", 0 );
+
 	}
 
 	
@@ -22,6 +25,8 @@ public static class GameData {
 		get{ return _gems; }
 		set{ PlayerPrefs.SetInt ( "Gems", (_gems = value) ); }
 	}
+
+	
 
 	/*---------------------------------------------------------
 		this line:
