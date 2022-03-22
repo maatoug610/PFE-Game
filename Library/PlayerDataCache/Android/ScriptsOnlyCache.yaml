@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AndroidNotifications
     - BoxMoneyManager
     - BuilderSystem
     - BuilderSystemBurger
@@ -9,6 +10,7 @@ ScriptsOnlyBuild:
     - MallMoneyManager
     - RestoMoneyManager
     - RewardsDataBase
+    - UpgradeSystem
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -105,49 +107,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12128}
+      Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 12176}
+      Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 12268}
+      Script: {instanceID: 12178}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12270}
     - Class: 114
-      Script: {instanceID: 12428}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 12680}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12682}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12736}
     - Class: 114
-      Script: {instanceID: 12960}
+      Script: {instanceID: 12874}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 12962}
     - Class: 114
-      Script: {instanceID: 13228}
+      Script: {instanceID: 13212}
     - Class: 114
-      Script: {instanceID: 13544}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 13570}
+      Script: {instanceID: 13546}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 13790}
+      Script: {instanceID: 13670}
     - Class: 114
-      Script: {instanceID: 13920}
+      Script: {instanceID: 13792}
     - Class: 114
-      Script: {instanceID: 13930}
+      Script: {instanceID: 13922}
     - Class: 114
-      Script: {instanceID: 13980}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 14082}
+      Script: {instanceID: 13982}
     - Class: 114
-      Script: {instanceID: 14134}
+      Script: {instanceID: 14084}
     - Class: 114
-      Script: {instanceID: 17906}
+      Script: {instanceID: 14136}
+    - Class: 114
+      Script: {instanceID: 17896}
+    - Class: 114
+      Script: {instanceID: 30288}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -367,6 +373,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 1b2e210758213b68002ea7e4b9d99b1c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UpgradeSystem
   - hash:
       serializedVersion: 2
       Hash: e82c0521cdfe8cb6a168ef7208a98d4a
@@ -769,7 +781,73 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.Notifications.Android.dll
+    namespaceName: Unity.Notifications.Android
+    className: AndroidReceivedNotificationMainThreadDispatcher
+  - hash:
+      serializedVersion: 2
+      Hash: 3fc18d4c1d611117da98084407443300
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: InventoryItem
+  - hash:
+      serializedVersion: 2
+      Hash: 898642f30894d1eb7cd67ff75c9dd282
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples
+    className: GameNotificationsManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NewsFeedReader
+  - hash:
+      serializedVersion: 2
+      Hash: d298af6e358343d5da1244e55030f024
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: InventoryItemData
+  - hash:
+      serializedVersion: 2
+      Hash: 77759952d599f14522d288d82e97e004
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: BuyInventoryItem
+  - hash:
+      serializedVersion: 2
+      Hash: edc10418df8053d2746effc3516626f4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: PendingNotificationItem
+  - hash:
+      serializedVersion: 2
+      Hash: 7d616b61720e1459114cac3709e9c387
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: GameController
+  - hash:
+      serializedVersion: 2
+      Hash: 709687d718161d04f2ffbde3be7cb961
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NotificationConsole
+  - hash:
+      serializedVersion: 2
+      Hash: a863d08b6a80a90a26ac361be951788e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NotificationEventItem
+  - hash:
+      serializedVersion: 2
+      Hash: 4c56690f11b5adcc7c4b78bde44378a7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AndroidNotifications
   platform: 13
   scenePathNames:
   - Assets/Scenes/Version4.unity
-  playerPath: C:/Users/PC/PFE App/Fichier Apk/PFEt2.apk
+  playerPath: C:/Users/PC/PFE App/Fichier Apk/New Test/PFEt3.apk

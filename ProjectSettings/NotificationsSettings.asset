@@ -1,0 +1,63 @@
+{
+    "MonoBehaviour": {
+        "m_Enabled": true,
+        "m_EditorHideFlags": 0,
+        "m_Name": "",
+        "m_EditorClassIdentifier": "",
+        "ToolbarIndex": 0,
+        "m_iOSNotificationSettingsValues": {
+            "m_Keys": [
+                "UnityNotificationRequestAuthorizationOnAppLaunch",
+                "UnityNotificationDefaultAuthorizationOptions",
+                "UnityAPSReleaseEnvironment",
+                "UnityNotificationRequestAuthorizationForRemoteNotificationsOnAppLaunch",
+                "UnityRemoteNotificationForegroundPresentationOptions",
+                "UnityUseLocationNotificationTrigger",
+                "UnityAddRemoteNotificationCapability",
+                "UnityUseAPSReleaseEnvironment"
+            ],
+            "m_Values": [
+                "True",
+                "-1",
+                "False",
+                "False",
+                "-1",
+                "False",
+                "False",
+                "False"
+            ]
+        },
+        "m_AndroidNotificationSettingsValues": {
+            "m_Keys": [
+                "UnityNotificationAndroidRescheduleOnDeviceRestart",
+                "UnityNotificationAndroidUseCustomActivity",
+                "UnityNotificationAndroidCustomActivityString"
+            ],
+            "m_Values": [
+                "True",
+                "False",
+                "com.unity3d.player.UnityPlayerActivity"
+            ]
+        },
+        "DrawableResources": [
+            {
+                "Id": "icon_1",
+                "Type": 1,
+                "Asset": {
+                    "fileID": 2800000,
+                    "guid": "4c6eb92642194c647a564735689063ab",
+                    "type": 3
+                }
+            },
+            {
+                "Id": "icon_2",
+                "Type": 0,
+                "Asset": {
+                    "fileID": 2800000,
+                    "guid": "d8241c041f0ac044081ff541e54ad32d",
+                    "type": 3
+                }
+            }
+        ]
+    }
+}

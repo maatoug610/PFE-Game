@@ -105,7 +105,7 @@ public class BuilderSystemBurger : MonoBehaviour
         while(startDay > 0){
             yield return new WaitForSeconds(1f);
             startDay --;
-            Debug.Log(startDay);
+            //Debug.Log(startDay);
             TimerBuild.text = $"{(startDay / 86400) % 365}day:{(startDay / 3600) % 24}h:{(startDay / 60) % 60}m:{startDay % 60}s";
             
         }

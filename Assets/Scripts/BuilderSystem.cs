@@ -34,14 +34,14 @@ public class BuilderSystem : MonoBehaviour
     int statusClicked=0;
     
     
-    void Awake(){
-        if(Instance == null){
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else{
-            Destroy(gameObject);
-        }
-    }
+    // void Awake(){
+    //     if(Instance == null){
+    //         Instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     } else{
+    //         Destroy(gameObject);
+    //     }
+    // }
 
 
     // Start is called before the first frame update
@@ -51,8 +51,7 @@ public class BuilderSystem : MonoBehaviour
         
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
         StartCount = PlayerPrefs.GetInt("StartCount", StartCount);
-        print(StartCount);
-        //StartCount = PlayerPrefs.GetInt("StartCount", 0);
+        
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
         if (!dateQuitString.Equals("")) {
             DateTime dateQuit = DateTime.Parse(dateQuitString);
@@ -133,7 +132,7 @@ public class BuilderSystem : MonoBehaviour
         while(StartCount > 0){
             yield return new WaitForSeconds(1f);
             StartCount --;
-            Debug.Log(StartCount);
+            //Debug.Log(StartCount);
             TimerBuild.text = $"{(StartCount / 3600) % 24}H:{(StartCount / 60) % 60}m:{StartCount % 60}s";
         }
         
