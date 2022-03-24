@@ -14,7 +14,7 @@ public class BoxMoneyManager : MonoBehaviour
     [SerializeField] ParticleSystem fxGems;
     public float Timer = 10;
     public float MoneyAdded = 50;
-    public int StartTimer = 0;
+    public int StartTimer = 1;
     public Text MoneyText;
     
     

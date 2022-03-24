@@ -53,6 +53,4 @@ public class RestoMoneyManager : MonoBehaviour
             StartTimer = 0;
         }
     }  
-    
-
 }
