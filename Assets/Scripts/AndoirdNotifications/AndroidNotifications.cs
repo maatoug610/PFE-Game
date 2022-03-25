@@ -5,7 +5,7 @@ using Unity.Notifications.Android;
 
 public class AndroidNotifications : MonoBehaviour
 {
-    [Header("Timer in Seconds")]
+    [Header("Timer in Hours")]
     [SerializeField] int timer = 22;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,8 @@ public class AndroidNotifications : MonoBehaviour
         notification. SmallIcon = "icon_1";
         notification. LargeIcon = "icon_2";
         notification.ShowTimestamp = true;
-        //notification.FireTime = System.DateTime.Now.AddHours(timer);
-        notification.FireTime = System.DateTime.Now.AddSeconds(timer);
+        notification.FireTime = System.DateTime.Now.AddHours(timer);
+        //notification.FireTime = System.DateTime.Now.AddSeconds(timer);
         var identifier = AndroidNotificationCenter.SendNotification (notification, "example_channel_id");
 
         if(AndroidNotificationCenter.CheckScheduledNotificationStatus(identifier) == NotificationStatus.Scheduled){

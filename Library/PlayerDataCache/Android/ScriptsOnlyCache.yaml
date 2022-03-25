@@ -5,12 +5,19 @@ ScriptsOnlyBuild:
     - BoxMoneyManager
     - BuilderSystem
     - BuilderSystemBurger
+    - BurgerMoneyManger
     - CameraController
+    - CashTriggerClientOne
+    - CashTriggerClientThree
+    - CashTriggerClientTwo
     - DailyRewardSystem.DailyRewards
+    - DoorController
     - MallMoneyManager
+    - PlayerNavMesh
     - RestoMoneyManager
     - RewardsDataBase
     - UpgradeSystem
+    - WCDoorController
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -37,8 +44,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -76,84 +85,110 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 72
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 11468}
+      Script: {instanceID: 11522}
     - Class: 114
-      Script: {instanceID: 11586}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11660}
+      Script: {instanceID: 11598}
     - Class: 114
-      Script: {instanceID: 11680}
+      Script: {instanceID: 11674}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11752}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11774}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 12022}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 12270}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12386}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12556}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12772}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 12962}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13230}
+      Script: {instanceID: 13044}
     - Class: 114
-      Script: {instanceID: 13546}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13392}
     - Class: 114
-      Script: {instanceID: 13792}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 13526}
     - Class: 114
-      Script: {instanceID: 13932}
+      Script: {instanceID: 13584}
     - Class: 114
-      Script: {instanceID: 13982}
+      Script: {instanceID: 13742}
     - Class: 114
-      Script: {instanceID: 14084}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 14136}
+      Script: {instanceID: 13828}
     - Class: 114
-      Script: {instanceID: 17896}
+      Script: {instanceID: 13870}
     - Class: 114
-      Script: {instanceID: 30288}
+      Script: {instanceID: 13998}
+    - Class: 114
+      Script: {instanceID: 14022}
+    - Class: 114
+      Script: {instanceID: 14134}
+    - Class: 114
+      Script: {instanceID: 14144}
+    - Class: 114
+      Script: {instanceID: 14194}
+    - Class: 114
+      Script: {instanceID: 14308}
+    - Class: 114
+      Script: {instanceID: 14362}
+    - Class: 114
+      Script: {instanceID: 19070}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -168,6 +203,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
     - Class: 213
@@ -180,7 +217,27 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ScrollRect
   - hash:
       serializedVersion: 2
       Hash: a1f19ad47d3094e235f21b74dfc423a8
@@ -229,6 +286,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: e4b453bdae3be079a993f3637ac564b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BurgerMoneyManger
   - hash:
       serializedVersion: 2
       Hash: 71f7f12b8d0f4fd73590db8bcb6d453c
@@ -301,12 +364,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
   - hash:
       serializedVersion: 2
       Hash: 8860633d29a22ff64e02e18da3716cdf
@@ -405,6 +462,12 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.Notifications.Android.dll
+    namespaceName: Unity.Notifications.Android
+    className: AndroidReceivedNotificationMainThreadDispatcher
+  - hash:
+      serializedVersion: 2
       Hash: 1103fb0758976355cdf9b7d5ce9cb7e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -471,22 +534,28 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 49498544b121440aa84b37e573a46010
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CashTriggerClientTwo
+  - hash:
+      serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
-      Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: ScrollRect
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3fc18d4c1d611117da98084407443300
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: InventoryItem
   - hash:
       serializedVersion: 2
       Hash: f14c7b861444e533aa9027161e89b432
@@ -507,7 +576,13 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: a25982738435aa6e403bc128405bd98a
+      Hash: 898642f30894d1eb7cd67ff75c9dd282
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples
+    className: GameNotificationsManager
+  - hash:
+      serializedVersion: 2
+      Hash: 4d9caf4c319857b1900445d9b7b5d8f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoxMoneyManager
@@ -525,10 +600,28 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NewsFeedReader
+  - hash:
+      serializedVersion: 2
+      Hash: d298af6e358343d5da1244e55030f024
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: InventoryItemData
+  - hash:
+      serializedVersion: 2
       Hash: 50c443b12ccc0b475183318b5088bcc5
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessDebug
+  - hash:
+      serializedVersion: 2
+      Hash: 4c56690f11b5adcc7c4b78bde44378a7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AndroidNotifications
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -561,10 +654,22 @@ ScriptsOnlyBuild:
     className: ClickObject
   - hash:
       serializedVersion: 2
+      Hash: 5ac4f8017ad26358d503d52a6f138327
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerNavMesh
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 77759952d599f14522d288d82e97e004
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: BuyInventoryItem
   - hash:
       serializedVersion: 2
       Hash: f64fd37da5cb89243ec68b5026d70bb8
@@ -579,10 +684,10 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: HorizontalLayoutGroup
+      Hash: edc10418df8053d2746effc3516626f4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: PendingNotificationItem
   - hash:
       serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
@@ -615,6 +720,18 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: d29f8b32fa3620fa229e929827b26d71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CashTriggerClientOne
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WCDoorController
+  - hash:
+      serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -645,10 +762,22 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DoorController
+  - hash:
+      serializedVersion: 2
       Hash: 137208ef34adff675767dc7cab904ca6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RestoMoneyManager
+  - hash:
+      serializedVersion: 2
+      Hash: 7d616b61720e1459114cac3709e9c387
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: GameController
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -661,6 +790,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 2b27a82bdac89897aa29d532b1627880
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CashTriggerClientThree
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -711,6 +846,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 709687d718161d04f2ffbde3be7cb961
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NotificationConsole
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -747,6 +888,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: a863d08b6a80a90a26ac361be951788e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: NotificationSamples.Demo
+    className: NotificationEventItem
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -781,73 +928,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.Notifications.Android.dll
-    namespaceName: Unity.Notifications.Android
-    className: AndroidReceivedNotificationMainThreadDispatcher
-  - hash:
-      serializedVersion: 2
-      Hash: 3fc18d4c1d611117da98084407443300
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: InventoryItem
-  - hash:
-      serializedVersion: 2
-      Hash: 898642f30894d1eb7cd67ff75c9dd282
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples
-    className: GameNotificationsManager
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: NewsFeedReader
-  - hash:
-      serializedVersion: 2
-      Hash: d298af6e358343d5da1244e55030f024
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: InventoryItemData
-  - hash:
-      serializedVersion: 2
-      Hash: 77759952d599f14522d288d82e97e004
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: BuyInventoryItem
-  - hash:
-      serializedVersion: 2
-      Hash: edc10418df8053d2746effc3516626f4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: PendingNotificationItem
-  - hash:
-      serializedVersion: 2
-      Hash: 7d616b61720e1459114cac3709e9c387
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: GameController
-  - hash:
-      serializedVersion: 2
-      Hash: 709687d718161d04f2ffbde3be7cb961
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: NotificationConsole
-  - hash:
-      serializedVersion: 2
-      Hash: a863d08b6a80a90a26ac361be951788e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: NotificationSamples.Demo
-    className: NotificationEventItem
-  - hash:
-      serializedVersion: 2
-      Hash: 4c56690f11b5adcc7c4b78bde44378a7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AndroidNotifications
   platform: 13
   scenePathNames:
   - Assets/Scenes/Version4.unity
-  playerPath: C:/Users/PC/PFE App/Fichier Apk/New Test/PFEt3.apk
+  playerPath: C:/Users/PC/PFE App/Fichier Apk/New Test/PFEt5.apk
