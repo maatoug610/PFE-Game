@@ -11,8 +11,7 @@ public class WCDoorController : MonoBehaviour
     [Space]
     [Header("Canvas Timer")]
     [SerializeField] private GameObject CanvasTimer;
-    [Header("Clients List")]
-    [SerializeField] private GameObject Client;
+   
 
      public float MoneyAdded = 0;
      public Text MoneyText;
@@ -26,6 +25,7 @@ public class WCDoorController : MonoBehaviour
         //Timer 
         StartTimer = 0;
         CanvasTimer.SetActive(true);
+        Destroy(other.gameObject,10f);    
     }
 
     private void OnTriggerExit(Collider other){
@@ -47,7 +47,7 @@ public class WCDoorController : MonoBehaviour
         }
         if(Timer < 0){
             GameData.Gems = GameData.Gems + (int) MoneyAdded;
-            Destroy(Client);
+            
             //Timer = TimeRest;
             Timer = 20;
             StartTimer = 1;

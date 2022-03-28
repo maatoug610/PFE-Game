@@ -52,7 +52,7 @@ public class CashTriggerClientOne : MonoBehaviour
         }
         if(Timer < 0){
             GameData.Gems = GameData.Gems + (int) MoneyAdded;
-            Destroy(Client1);
+            Destroy(Client1,2f);
             
             //Timer = TimeRest;
             Timer = 20;

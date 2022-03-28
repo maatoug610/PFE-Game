@@ -42,6 +42,8 @@ namespace DailyRewardSystem {
 		[Header ( "Rewards Database" )]
 		[SerializeField] RewardsDataBase rewardsDB;
 
+		
+
 		[Space]
 		[Header ( "FX" )]
 		
@@ -58,7 +60,7 @@ namespace DailyRewardSystem {
 
 		private int nextRewardIndex;
 		private bool isRewardReady = false;
-
+		
 		void Start () {
 			Initialize ();
 			StopAllCoroutines ( );
@@ -182,11 +184,14 @@ namespace DailyRewardSystem {
 		//Open | Close UI -------------------------------------------------------
 		void OnOpenButtonClick ( ) {
 			rewardsCanvas.SetActive ( true );
+			
 		}
 
 		void OnCloseButtonClick ( ) {
 			rewardsCanvas.SetActive ( false );
 		}
+
+		
 
 		
 	}
