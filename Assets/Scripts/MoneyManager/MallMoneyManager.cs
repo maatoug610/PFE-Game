@@ -14,9 +14,10 @@ public class MallMoneyManager : MonoBehaviour
     [Header("Image Timer")]
     [SerializeField] private Image TimerImageMall;
     [Space]
-		[Header ( "FX" )]
-		
-		[SerializeField] ParticleSystem fxGems;
+	[Header ( "FX" )]
+	[SerializeField] ParticleSystem fxGems;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class MallMoneyManager : MonoBehaviour
             GameData.Gems = GameData.Gems + (int) MoneyAdded;
             Timer = 20;
             StartTimer = 0;
+         
         }
     }
 }

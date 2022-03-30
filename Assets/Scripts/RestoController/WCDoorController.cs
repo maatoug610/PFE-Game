@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class WCDoorController : MonoBehaviour
 {
     Animator _doorAnim;
+    public AudioSource audioSource;
+    
+    
     [Header("Image Timer")]
     [SerializeField] private Image TimerImageWC;
     [Space]
@@ -13,19 +16,21 @@ public class WCDoorController : MonoBehaviour
     [SerializeField] private GameObject CanvasTimer;
    
 
-     public float MoneyAdded = 0;
-     public Text MoneyText;
-    public float Timer = 20;
+    public float MoneyAdded = 0;
+    public Text MoneyText;
+    float Timer = 20;
     int StartTimer = 1;
-    public float TimeRest = 10;
+    public float TimeRest = 15;
     
 
     private void OnTriggerEnter(Collider other){
+        //Animation:
         _doorAnim.SetBool("OpenWC",true);
+
         //Timer 
         StartTimer = 0;
         CanvasTimer.SetActive(true);
-        Destroy(other.gameObject,10f);    
+        Destroy(other.gameObject,20f);    
     }
 
     private void OnTriggerExit(Collider other){
@@ -36,6 +41,7 @@ public class WCDoorController : MonoBehaviour
     void Start()
     {
         _doorAnim = this.transform.parent.GetComponent<Animator>();
+        
     }
 
     void Update(){
@@ -47,10 +53,11 @@ public class WCDoorController : MonoBehaviour
         }
         if(Timer < 0){
             GameData.Gems = GameData.Gems + (int) MoneyAdded;
-            
             //Timer = TimeRest;
             Timer = 20;
             StartTimer = 1;
+            //Audio sound :
+            audioSource.Play();
         }
     }
 

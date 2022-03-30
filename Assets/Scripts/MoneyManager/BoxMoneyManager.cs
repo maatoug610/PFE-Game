@@ -12,13 +12,17 @@ public class BoxMoneyManager : MonoBehaviour
     [Space]
 	[Header ( "FX" )]
     [SerializeField] ParticleSystem fxGems;
+    [Space]
+    [Header("Sound Claim")]
+    [SerializeField] AudioClip CollectSound;
 
-    Ray ray;
-    RaycastHit hit;
-    public float Timer = 10;
+ 
+    float Timer = 20;
     public float MoneyAdded = 50;
-    public int StartTimer = 1;
+    int StartTimer = 0;
     public Text MoneyText;
+
+
     
     
     // Start is called before the first frame update
@@ -39,29 +43,16 @@ public class BoxMoneyManager : MonoBehaviour
             Timer = 20;
             StartTimer = 0;
         }
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         if(Physics.Raycast(ray, out hit))
-         {
-             if(Input.GetMouseButtonDown(0)){
-                 
-                if(hit.collider.name == "ColaMachine"){
-                    
-                    GameData.Gems = GameData.Gems + (int) MoneyAdded;
-                    IconMoney.SetActive(false);
-                    StartTimer = 0;
-               }
-                
-             }
-            
-         }
+        
     }
 
-    // public void BtnStart(){
-    //     //fxGems.Play ( );
-    //     GameData.Gems = GameData.Gems + (int) MoneyAdded;
-    //     IconMoney.SetActive(false);
-    //     StartTimer = 0;
-
-    // }
+    public void Collect(){
+        //sound collect
+        AudioSource.PlayClipAtPoint(CollectSound,transform.position,0.5f);
+        //fxGems.Play ( );
+        GameData.Gems = GameData.Gems + (int) MoneyAdded;
+        IconMoney.SetActive(false);
+        Timer = 20;
+    }
     
 }

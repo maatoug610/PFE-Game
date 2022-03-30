@@ -22,7 +22,7 @@ public class RestoMoneyManager : MonoBehaviour
     [Space]
 	[Header ( "FX" )]
 	[SerializeField] ParticleSystem fxGems;
-   
+
     
 
     // Start is called before the first frame update
@@ -51,6 +51,8 @@ public class RestoMoneyManager : MonoBehaviour
             //Timer = TimeRest;
             Timer = 20;
             StartTimer = 0;
+           //fX ui:
+           
         }
     }  
 }

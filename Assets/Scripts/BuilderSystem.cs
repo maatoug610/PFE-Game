@@ -23,7 +23,7 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
     [Header("Time in second: 60s -> 1m")]// 6h -> 21600s// 3day -> 259200
-    public int StartCount=21600; 
+    int StartCount=21600; 
     //int StartCount = 0;
     //public int EndTime = 21600;
     // Raycast to detected object :

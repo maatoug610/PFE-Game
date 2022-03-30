@@ -13,6 +13,8 @@ public class BurgerMoneyManger : MonoBehaviour
 
     [Header("Image Timer")]
     [SerializeField] private Image TimerImageBurger;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class BurgerMoneyManger : MonoBehaviour
             //Timer = TimeRest;
             Timer = 20;
             StartTimer = 0;
+         
         }
     }
 }

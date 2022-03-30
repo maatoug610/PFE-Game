@@ -7,15 +7,15 @@ ScriptsOnlyBuild:
     - BuilderSystemBurger
     - BurgerMoneyManger
     - CameraController
-    - CashTriggerClientOne
-    - CashTriggerClientThree
-    - CashTriggerClientTwo
+    - CashTRiggerAllClient
     - DailyRewardSystem.DailyRewards
     - DoorController
     - MallMoneyManager
     - PlayerNavMesh
+    - PopCornMoneyManager
     - RestoMoneyManager
     - RewardsDataBase
+    - SpawnerClient
     - UpgradeSystem
     - WCDoorController
     Unity.Postprocessing.Runtime.dll:
@@ -103,6 +103,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -140,55 +142,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12546}
-    - Class: 114
-      Script: {instanceID: 12556}
+      Script: {instanceID: 12554}
     - Class: 114
       Script: {instanceID: 12772}
     - Class: 114
       Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 12890}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13006}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 13044}
+      Script: {instanceID: 13048}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 13136}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13196}
     - Class: 114
-      Script: {instanceID: 13392}
+      Script: {instanceID: 13398}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13416}
     - Class: 114
-      Script: {instanceID: 13526}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 13584}
+      Script: {instanceID: 13746}
     - Class: 114
-      Script: {instanceID: 13742}
+      Script: {instanceID: 13772}
     - Class: 114
-      Script: {instanceID: 13768}
+      Script: {instanceID: 13830}
     - Class: 114
-      Script: {instanceID: 13828}
+      Script: {instanceID: 13836}
     - Class: 114
-      Script: {instanceID: 13870}
+      Script: {instanceID: 13878}
     - Class: 114
-      Script: {instanceID: 13998}
+      Script: {instanceID: 13890}
     - Class: 114
-      Script: {instanceID: 14022}
-    - Class: 114
-      Script: {instanceID: 14134}
+      Script: {instanceID: 14010}
     - Class: 114
       Script: {instanceID: 14144}
     - Class: 114
-      Script: {instanceID: 14194}
+      Script: {instanceID: 14154}
     - Class: 114
-      Script: {instanceID: 14308}
+      Script: {instanceID: 14204}
     - Class: 114
-      Script: {instanceID: 14362}
+      Script: {instanceID: 14318}
     - Class: 114
-      Script: {instanceID: 19070}
+      Script: {instanceID: 14372}
+    - Class: 114
+      Script: {instanceID: 14418}
+    - Class: 114
+      Script: {instanceID: 18112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -196,6 +198,8 @@ ScriptsOnlyBuild:
     - Class: 128
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 146
       Script: {instanceID: 0}
@@ -534,16 +538,16 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 49498544b121440aa84b37e573a46010
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CashTriggerClientTwo
-  - hash:
-      serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: ChromaticAberration
+  - hash:
+      serializedVersion: 2
+      Hash: 660a207123c78cef5ee399f52a18c179
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CubePeople
+    className: EightDirectionMovement
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -558,7 +562,7 @@ ScriptsOnlyBuild:
     className: InventoryItem
   - hash:
       serializedVersion: 2
-      Hash: f14c7b861444e533aa9027161e89b432
+      Hash: 469f560b03bdc0a84a0d53ed10f4fa24
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuilderSystem
@@ -576,13 +580,19 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: b3b88a83977f0095ee5fd9765e4de1e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationScript
+  - hash:
+      serializedVersion: 2
       Hash: 898642f30894d1eb7cd67ff75c9dd282
     assemblyName: Assembly-CSharp.dll
     namespaceName: NotificationSamples
     className: GameNotificationsManager
   - hash:
       serializedVersion: 2
-      Hash: 4d9caf4c319857b1900445d9b7b5d8f9
+      Hash: 65a840675d3b023ca8f7b747c9d0ccd8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoxMoneyManager
@@ -604,6 +614,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: NotificationSamples.Demo
     className: NewsFeedReader
+  - hash:
+      serializedVersion: 2
+      Hash: 341fcf499fa21fc395fe43dab7589695
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CubePeople
+    className: FollowTarget
   - hash:
       serializedVersion: 2
       Hash: d298af6e358343d5da1244e55030f024
@@ -648,10 +664,16 @@ ScriptsOnlyBuild:
     className: RewardsDataBase
   - hash:
       serializedVersion: 2
-      Hash: e1837aa8f0ba22ae1335154af5162ba3
+      Hash: 914ab3de608ba0b835f919ad7c315998
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClickObject
+  - hash:
+      serializedVersion: 2
+      Hash: a42d506ac912d3a59ee095c160e00715
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIParticleSystem
   - hash:
       serializedVersion: 2
       Hash: 5ac4f8017ad26358d503d52a6f138327
@@ -720,13 +742,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: d29f8b32fa3620fa229e929827b26d71
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CashTriggerClientOne
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 66d7b2829fd43d6304b2045005f286ca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WCDoorController
@@ -738,7 +754,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: d4724b6885b3fc36bd42fbd398f29ff3
+      Hash: 469f560b03bdc0a84a0d53ed10f4fa24
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuilderSystemBurger
@@ -762,6 +778,18 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: f4a095cba6d3c37f45a8dfa5ab9ac652
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CubePeople
+    className: AnimationController
+  - hash:
+      serializedVersion: 2
+      Hash: 149597c343113b6374dc79c79bad7a55
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnerClient
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -772,6 +800,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RestoMoneyManager
+  - hash:
+      serializedVersion: 2
+      Hash: a5f7f83e37f6ad2412c9506d95ceb983
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CashTRiggerAllClient
+  - hash:
+      serializedVersion: 2
+      Hash: de9f4da3dc9983800449777af6189504
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CubePeople
+    className: CubePeopleTraffic
   - hash:
       serializedVersion: 2
       Hash: 7d616b61720e1459114cac3709e9c387
@@ -790,12 +830,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
-  - hash:
-      serializedVersion: 2
-      Hash: 2b27a82bdac89897aa29d532b1627880
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CashTriggerClientThree
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -922,6 +956,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 65a840675d3b023ca8f7b747c9d0ccd8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PopCornMoneyManager
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class CashTRiggerAllClient : MonoBehaviour
 {
 
-    Animator _clientAnim;
+    
+    public AudioSource audioSource;
+
     public float MoneyAdded = 0;
     public float Timer = 10;
     int StartTimer = 1;
@@ -23,6 +25,7 @@ public class CashTRiggerAllClient : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         //Anination...
+        
         //Timer
             StartTimer = 0;
             CanvasTimer.SetActive(true);
@@ -32,7 +35,7 @@ public class CashTRiggerAllClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _clientAnim = this.transform.parent.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -44,11 +47,11 @@ public class CashTRiggerAllClient : MonoBehaviour
             Timer = Timer - 1 * Time.deltaTime;
         }
         if(Timer < 0){
-            //GameData.Gems = GameData.Gems + (int) MoneyAdded;
-            
+            GameData.Gems = GameData.Gems + (int) MoneyAdded;
             //Timer = TimeRest;
             Timer = 10;
             StartTimer = 1;
+            audioSource.Play();
         }   
     }
 }

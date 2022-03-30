@@ -20,7 +20,7 @@ public class AndroidNotifications : MonoBehaviour
         AndroidNotificationCenter.RegisterNotificationChannel (notificationChannel);
         AndroidNotification notification = new AndroidNotification ();
         notification.Title = "Reward";
-        notification. Text = "Hi Boss Take This !!!";
+        notification. Text = "Hi Master Take This Great Reward !!!";
         notification. SmallIcon = "icon_1";
         notification. LargeIcon = "icon_2";
         notification.ShowTimestamp = true;

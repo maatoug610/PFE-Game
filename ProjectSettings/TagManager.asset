@@ -9,6 +9,8 @@ TagManager:
   - Terrain_Building2
   - Resto2
   - trigger
+  - RestoCash
+  - TargetWC
   layers:
   - Default
   - TransparentFX

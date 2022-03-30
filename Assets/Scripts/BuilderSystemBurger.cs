@@ -28,7 +28,9 @@ public class BuilderSystemBurger : MonoBehaviour
     //public static BuilderSystem2 Instance {get; private set;}
     int statusClicked2=0;
     [Header("Time in second: 60s -> 1m")]
-    public int startDay=259200; //3 days
+    int startDay=259200; //3 days
+
+    
 
     // Start is called before the first frame update
     void Start()

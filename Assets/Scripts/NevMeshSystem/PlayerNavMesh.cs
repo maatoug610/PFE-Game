@@ -15,9 +15,21 @@ public class PlayerNavMesh : MonoBehaviour
 
     void Start(){
         anim = GetComponent<Animator>();
+        anim.SetBool("isWalking",true);
     }
 
     private void Update(){
         navMeshAgent.destination = movePositionTransform.position;
     }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag == "RestoCash"){
+            anim.SetBool("isWalking",false);
+        } 
+        else if(other.gameObject.tag == "TargetWC"){
+            anim.SetBool("isWalking",false);
+        }
+    }
+    
+
 }
