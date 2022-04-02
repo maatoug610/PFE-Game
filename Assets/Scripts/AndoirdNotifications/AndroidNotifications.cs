@@ -10,6 +10,7 @@ public class AndroidNotifications : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 10;
         AndroidNotificationChannel  notificationChannel = new AndroidNotificationChannel(){
             Id = "example_channel_id",
             Name = "Default Channel",
