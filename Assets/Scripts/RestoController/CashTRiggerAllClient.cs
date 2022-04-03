@@ -8,11 +8,12 @@ public class CashTRiggerAllClient : MonoBehaviour
 
     
     public AudioSource audioSource;
-
+    public AudioSource audioEat;
     public float MoneyAdded = 0;
     public float Timer = 10;
     int StartTimer = 1;
     public float TimeRest = 6;
+    int r;
     //public Text MoneyText;
 
     //public Text TimerText;
@@ -21,7 +22,9 @@ public class CashTRiggerAllClient : MonoBehaviour
     [Space]
     [Header("Canvas Timer")]
     [SerializeField] private GameObject CanvasTimer;
-    
+    [Space]
+    [Header("Fruit Image")]
+    [SerializeField] private GameObject[] FoodImage;
 
     private void OnTriggerEnter(Collider other){
         //Anination...
@@ -29,7 +32,19 @@ public class CashTRiggerAllClient : MonoBehaviour
         //Timer
             StartTimer = 0;
             CanvasTimer.SetActive(true);
+            int rand = Random.Range(0,FoodImage.Length);
+            r = rand;
+            FoodImage[rand].gameObject.SetActive(true);
+            StartCoroutine("count");
+            audioEat.Play();
             Destroy(other.gameObject,10f);    
+            
+    }
+
+     IEnumerator count(){
+        
+        yield return new WaitForSeconds(8f);
+        FoodImage[r].gameObject.SetActive(false);
     }
     
     // Start is called before the first frame update

@@ -699,6 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6607618316069957880}
   - component: {fileID: 6554575490795241022}
+  - component: {fileID: -7079768922939711741}
   m_Layer: 0
   m_Name: MobileMaleFree1
   m_TagString: Untagged
@@ -742,6 +743,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7079768922939711741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604026760885166350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686da54fa99a3c84dbd80f3ab3aef1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6604030938064300602
 GameObject:
   m_ObjectHideFlags: 0
