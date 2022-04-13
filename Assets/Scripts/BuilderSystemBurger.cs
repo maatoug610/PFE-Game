@@ -10,6 +10,7 @@ public class BuilderSystemBurger : MonoBehaviour
     [Header ( "Chronometre UI" )]
     [SerializeField] Text TimerBuild;
     [SerializeField] GameObject ChronometreCanvas;
+    [SerializeField] GameObject QuizCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -28,8 +29,11 @@ public class BuilderSystemBurger : MonoBehaviour
     //public static BuilderSystem2 Instance {get; private set;}
     int statusClicked2=0;
     [Header("Time in second: 60s -> 1m")]
-    int startDay=259200; //3 days
+    int startDay=36000; //10 hours
 
+    public QuizManager quizManager;
+    
+    
     
 
     // Start is called before the first frame update
@@ -72,16 +76,19 @@ public class BuilderSystemBurger : MonoBehaviour
     {
         // Code Of Detected object With mouse:
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         if(Physics.Raycast(ray, out hit))
+        if(Physics.Raycast(ray, out hit))
          {
              if(Input.GetMouseButtonDown(0)){
                  
                 if(hit.collider.tag == "Terrain_Building2"){
-                    ChronometreCanvas.SetActive(true);
+                    if(quizManager.End == true){
+                        ChronometreCanvas.SetActive(true);
+                    }
+                    else{
+                        QuizCanvas.SetActive(true);
+                    }
                }
-                
              }
-            
          }
         
     }
