@@ -13,6 +13,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject canvasUpgrade;
     public GameObject canvasQuestion; 
     public GameObject canvasQuestion2;
+    public GameObject canvasQuestion3;
 
 
     // Start is called before the first frame update
@@ -20,13 +21,14 @@ public class CanvasManager : MonoBehaviour
     {
         
         if(canvasReward.activeSelf){
-            print("Reward is active");
+           
             canvasChro1.SetActive(false);
             canvasChro2.SetActive(false);
             canvasChro3.SetActive(false);
             canvasUpgrade.SetActive(false);
             canvasQuestion.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
             //Time.timeScale = 0;
         }
         else if(canvasChro1.activeSelf){
@@ -36,6 +38,7 @@ public class CanvasManager : MonoBehaviour
             canvasUpgrade.SetActive(false);
             canvasQuestion.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
         }
         else if(canvasChro2.activeSelf){
             canvasChro1.SetActive(false);
@@ -44,6 +47,7 @@ public class CanvasManager : MonoBehaviour
             canvasUpgrade.SetActive(false);
             canvasQuestion.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
         }
         else if(canvasChro3.activeSelf){
             canvasChro1.SetActive(false);
@@ -52,6 +56,7 @@ public class CanvasManager : MonoBehaviour
             canvasUpgrade.SetActive(false);
             canvasQuestion.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
         }
        
         else if(canvasQuestion.activeSelf){
@@ -61,6 +66,7 @@ public class CanvasManager : MonoBehaviour
             canvasReward.SetActive(false);
             canvasUpgrade.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
 
         }
         else if(canvasQuestion2.activeSelf){
@@ -70,7 +76,17 @@ public class CanvasManager : MonoBehaviour
             canvasReward.SetActive(false);
             canvasUpgrade.SetActive(false);
             canvasQuestion.SetActive(false);
+            canvasQuestion3.SetActive(false);
 
+        }
+        else if(canvasQuestion3.activeSelf){
+            canvasChro1.SetActive(false);
+            canvasChro2.SetActive(false);
+            canvasChro3.SetActive(false);
+            canvasReward.SetActive(false);
+            canvasQuestion.SetActive(false);
+            canvasQuestion2.SetActive(false);
+            canvasUpgrade.SetActive(false);
         }
          else if(canvasUpgrade.activeSelf){
             canvasChro1.SetActive(false);
@@ -79,6 +95,7 @@ public class CanvasManager : MonoBehaviour
             canvasReward.SetActive(false);
             canvasQuestion.SetActive(false);
             canvasQuestion2.SetActive(false);
+            canvasQuestion3.SetActive(false);
         }
 
         

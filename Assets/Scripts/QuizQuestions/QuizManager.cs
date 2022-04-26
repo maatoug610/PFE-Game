@@ -16,8 +16,6 @@ public class QuizManager : MonoBehaviour
     public bool End=false;
    
     
-    
-
     void Start(){
         generateQuestion();
     }
@@ -34,6 +32,7 @@ public class QuizManager : MonoBehaviour
         generateQuestion();
 
     }
+
     public void wrong(){
         QuestionTxt.text = QnA[currentQuestions].Question;
     }
@@ -53,7 +52,7 @@ public class QuizManager : MonoBehaviour
 
 
     void generateQuestion(){
-        print(QnA.Count);
+       
         if(QnA.Count > 0){
 
         currentQuestions = Random.Range(0,QnA.Count);

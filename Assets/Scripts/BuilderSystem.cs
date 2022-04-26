@@ -12,6 +12,7 @@ public class BuilderSystem : MonoBehaviour
     [Header ( "Chronometre UI" )]
     [SerializeField] Text TimerBuild;
     [SerializeField] GameObject ChronometreCanvas;
+    [SerializeField] GameObject QuizCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -32,6 +33,7 @@ public class BuilderSystem : MonoBehaviour
     //Varibales
     public static BuilderSystem Instance {get; private set;}
     int statusClicked=0;
+     public QuizManager3 quizManager;
     
     
     // void Awake(){
@@ -92,7 +94,15 @@ public class BuilderSystem : MonoBehaviour
              if(Input.GetMouseButtonDown(0)){
                  
                 if(hit.collider.tag == "Terrain_Building"){
-                    ChronometreCanvas.SetActive(true);
+                    if(quizManager.End == true){
+                        ChronometreCanvas.SetActive(true);
+                    }
+                   else{
+                       QuizCanvas.SetActive(true);
+                   }
+
+                   
+
                }
                 
              }
