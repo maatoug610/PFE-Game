@@ -12,6 +12,7 @@ TagManager:
   - RestoCash
   - TargetWC
   - Terrain_Building3
+  - game1
   layers:
   - Default
   - TransparentFX

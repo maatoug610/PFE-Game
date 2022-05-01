@@ -27,7 +27,7 @@ public class CashTRiggerAllClient : MonoBehaviour
     [SerializeField] private GameObject[] FoodImage;
 
     private void OnTriggerEnter(Collider other){
-        //Anination...
+        //Animation...
         
         //Timer
             StartTimer = 0;

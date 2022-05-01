@@ -15,6 +15,7 @@ public class WokerController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+        
         StartCoroutine("Counter");
         
         am.SetBool("isPicked",true);

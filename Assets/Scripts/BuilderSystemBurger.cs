@@ -21,6 +21,7 @@ public class BuilderSystemBurger : MonoBehaviour
     [Header("Builing object")]
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
+    [SerializeField] GameObject nextBuild;
 
     // Raycast to detected object :
     Ray ray;
@@ -29,10 +30,11 @@ public class BuilderSystemBurger : MonoBehaviour
     //public static BuilderSystem2 Instance {get; private set;}
     int statusClicked2=0;
     [Header("Time in second: 60s -> 1m")]
-    int startDay=36000; //10 hours
+    int startDay=180; //3 min
 
     public QuizManager quizManager;
-    
+    // Mission Build Complet sound
+    public AudioSource audioSource;
     
     
 
@@ -66,6 +68,8 @@ public class BuilderSystemBurger : MonoBehaviour
            //FinishedTimer.SetActive(true); 
            Destroy(TerrainBuild);
            Build1.SetActive(true);
+           nextBuild.SetActive(true);
+           audioSource.Play();
         }
         
 
@@ -124,6 +128,8 @@ public class BuilderSystemBurger : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(TerrainBuild);
         Build1.SetActive(true);
+        nextBuild.SetActive(true);
+        audioSource.Play();
         
     }
     //Timer of Show MinusMoney Panel:

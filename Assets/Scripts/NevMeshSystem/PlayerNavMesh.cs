@@ -30,6 +30,9 @@ public class PlayerNavMesh : MonoBehaviour
         else if(other.gameObject.tag == "TargetWC"){
             anim.SetBool("isWalking",false);
         }
+        else if(other.gameObject.tag == "game1"){
+            anim.SetBool("isWalking",false);
+        }
         
     }
     

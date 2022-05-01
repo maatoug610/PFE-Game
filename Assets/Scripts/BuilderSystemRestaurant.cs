@@ -21,7 +21,7 @@ public class BuilderSystemRestaurant : MonoBehaviour
     [Header("Builing object")]
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
-
+    [SerializeField] GameObject nextBuild;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -29,8 +29,10 @@ public class BuilderSystemRestaurant : MonoBehaviour
     //public static BuilderSystem2 Instance {get; private set;}
     int statusClicked3=0;
     [Header("Time in second: 60s -> 1m")]
-    int startDay2=54000; //15 hours
+    int startDay2=180; //3 min
     public QuizManager2 quizManager;
+    // Mission Build Complet sound
+    public AudioSource audioSource;
     
     
 
@@ -64,6 +66,8 @@ public class BuilderSystemRestaurant : MonoBehaviour
            //FinishedTimer.SetActive(true); 
            Destroy(TerrainBuild);
            Build1.SetActive(true);
+           nextBuild.SetActive(true);
+           audioSource.Play();
         }
         
 
@@ -125,6 +129,8 @@ public class BuilderSystemRestaurant : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(TerrainBuild);
         Build1.SetActive(true);
+        nextBuild.SetActive(true);
+        audioSource.Play();
         
     }
     //Timer of Show MinusMoney Panel:

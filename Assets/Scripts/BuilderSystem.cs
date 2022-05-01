@@ -23,17 +23,21 @@ public class BuilderSystem : MonoBehaviour
     [Header("Builing object")]
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
+    [SerializeField] GameObject nextBuild;
     [Header("Time in second: 60s -> 1m")]// 6h -> 21600s// 3day -> 259200
-    int StartCount=21600; 
-    //int StartCount = 0;
-    //public int EndTime = 21600;
+    int StartCount=120; //02 min
+    int statusClicked=0;
+    [Space ]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider level_Slider;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
     //Varibales
     public static BuilderSystem Instance {get; private set;}
-    int statusClicked=0;
-     public QuizManager3 quizManager;
+    public QuizManager3 quizManager;
+    // Mission Build Complet sound
+    public AudioSource audioSource;
     
     
     // void Awake(){
@@ -81,6 +85,8 @@ public class BuilderSystem : MonoBehaviour
            FinishedTimer.SetActive(true); 
            Destroy(TerrainBuild);
            Build1.SetActive(true);
+           nextBuild.SetActive(true);
+           audioSource.Play();
         }
     }
 
@@ -100,8 +106,6 @@ public class BuilderSystem : MonoBehaviour
                    else{
                        QuizCanvas.SetActive(true);
                    }
-
-                   
 
                }
                 
@@ -143,7 +147,8 @@ public class BuilderSystem : MonoBehaviour
             yield return new WaitForSeconds(1f);
             StartCount --;
             //Debug.Log(StartCount);
-            TimerBuild.text = $"{(StartCount / 3600) % 24}H:{(StartCount / 60) % 60}m:{StartCount % 60}s";
+            TimerBuild.text = $"{(StartCount / 86400) % 365}day:{(StartCount / 3600) % 24}h:{(StartCount / 60) % 60}m:{StartCount % 60}s";
+            
         }
         
         PanelTimerBuild.SetActive(false);
@@ -151,7 +156,10 @@ public class BuilderSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(TerrainBuild);
         Build1.SetActive(true);
-        //save Build active:
+        nextBuild.SetActive(true);
+        audioSource.Play();
+        level_Slider.value +=1;
+        
     }
     
     
