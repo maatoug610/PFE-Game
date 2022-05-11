@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/level1.unity
-    guid: 45e33d7ecba4dfc429829490911c3ef6
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/CartoonLowPolyCityLite_01.unity
-    guid: 1c9c83f564538dd49ac0614cb5d27d32
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/version 3.unity
-    guid: 04ec50eec871b054382f49d1312ba586
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 366c044d1e7defe48987761ade63bda3
   - enabled: 1
     path: Assets/Scenes/Version4.unity
     guid: 17be6fce828565541aae7da1ffd25eed
+  - enabled: 0
+    path: Assets/Scenes/Taxes.unity
+    guid: ba5559534b0c2bd4ba99da12aeb6da9a
   m_configObjects: {}

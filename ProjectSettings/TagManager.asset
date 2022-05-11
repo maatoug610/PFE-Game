@@ -13,6 +13,8 @@ TagManager:
   - TargetWC
   - Terrain_Building3
   - game1
+  - Terrain_Building4
+  - Mall
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,12 @@ public class UpgradeSystem : MonoBehaviour
     [Header("Upgrade UI")]
     [SerializeField] GameObject UpgradeCanvas;
     [SerializeField] Button CloseButton;
+    [Space ]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider level_Slider;
+    [Space ]
+    [Header ("Slider Level 2")]
+    [SerializeField] private Slider level_Slider2;
     Ray ray;
     RaycastHit hit;
 
@@ -23,14 +29,27 @@ public class UpgradeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit)){
-            if(Input.GetMouseButtonDown(0)){
-                if(hit.collider.tag == "Resto2" || hit.collider.name == "Mall" || hit.collider.name == "Burger Shop 1"){
-                    UpgradeCanvas.SetActive(true);
-                }
-            }
+        // ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // if(Physics.Raycast(ray, out hit)){
+        //     if(Input.GetMouseButtonDown(0)){
+        //         if(hit.collider.tag == "Resto2" || hit.collider.tag == "Mall" || hit.collider.tag == "Burger Shop 1"){
+        //             UpgradeCanvas.SetActive(true);
+        //         }
+        //     }
+        // }
+    }
+    public void UpgradeMoney(){
+       
+        level_Slider2.value += 1;
+        
+        if (level_Slider2.value > 9 ){
+             level_Slider.value += 1;
+            level_Slider2.value = 1;
+            GameData.Gems += 1;
         }
+    }
+    public void openUpgrade(){
+         UpgradeCanvas.SetActive(true);
     }
 
     void Initialize ( ) {

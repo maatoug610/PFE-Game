@@ -13,6 +13,7 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] Text TimerBuild;
     [SerializeField] GameObject ChronometreCanvas;
     [SerializeField] GameObject QuizCanvas;
+    public GameObject LoseGameCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -25,19 +26,25 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject TerrainBuild;
     [SerializeField] GameObject nextBuild;
     [Header("Time in second: 60s -> 1m")]// 6h -> 21600s// 3day -> 259200
-    int StartCount=120; //02 min
+    [SerializeField] int StartCount=60; //02 min
     int statusClicked=0;
     [Space ]
     [Header ("Slider Level")]
     [SerializeField] private Slider level_Slider;
+    float slider_store;
+    [Space]
+    [Header("Timer Quiz")]
+    [SerializeField] private Text TimerText;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
     //Varibales
     public static BuilderSystem Instance {get; private set;}
-    public QuizManager3 quizManager;
+    public QuizManager quizManager;
+
     // Mission Build Complet sound
     public AudioSource audioSource;
+    public int Timer = 10;
     
     
     // void Awake(){
@@ -57,7 +64,8 @@ public class BuilderSystem : MonoBehaviour
         
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
         StartCount = PlayerPrefs.GetInt("StartCount", StartCount);
-        
+        slider_store = PlayerPrefs.GetFloat("slider_store", slider_store);
+
         string dateQuitString = PlayerPrefs.GetString ("dateQuit", "");
         if (!dateQuitString.Equals("")) {
             DateTime dateQuit = DateTime.Parse(dateQuitString);
@@ -86,6 +94,8 @@ public class BuilderSystem : MonoBehaviour
            Destroy(TerrainBuild);
            Build1.SetActive(true);
            nextBuild.SetActive(true);
+           //store the level bar
+           level_Slider.value = slider_store;
            audioSource.Play();
         }
     }
@@ -105,6 +115,7 @@ public class BuilderSystem : MonoBehaviour
                     }
                    else{
                        QuizCanvas.SetActive(true);
+                       StartCoroutine("CounterOfQuiz");
                    }
 
                }
@@ -112,6 +123,32 @@ public class BuilderSystem : MonoBehaviour
              }
             
          }
+    }
+
+    void LoseGame()
+    {
+        Timer = 10;
+        LoseGameCanvas.SetActive(true);
+        QuizCanvas.SetActive(false);
+        GameData.Gems -=20;
+        StartCoroutine("ActivePanel");
+    }
+
+    IEnumerator CounterOfQuiz(){
+
+        while(Timer > 0){
+        yield return new WaitForSeconds(1f);
+        Timer --;
+        TimerText.text = $"{(Timer / 60) % 60}m:{Timer % 60}s";
+        }
+        
+        LoseGame();
+        
+
+    }
+    IEnumerator ActivePanel(){
+        yield return new WaitForSeconds(2f);
+        LoseGameCanvas.SetActive(false);
     }
     // Button of Start Count Timer1:
     public void StartCounter(){
@@ -159,6 +196,9 @@ public class BuilderSystem : MonoBehaviour
         nextBuild.SetActive(true);
         audioSource.Play();
         level_Slider.value +=1;
+        slider_store = level_Slider.value;
+        PlayerPrefs.SetFloat("slider_store",slider_store);
+        
         
     }
     
@@ -177,6 +217,7 @@ public class BuilderSystem : MonoBehaviour
         PlayerPrefs.SetString("dateQuit",dateQuit.ToString());
         PlayerPrefs.SetInt("StartCount", StartCount); //Save Time Text
         PlayerPrefs.SetInt("statusClicked",statusClicked);
+        PlayerPrefs.SetFloat("slider_store",slider_store);
         PlayerPrefs.Save();
     }
 

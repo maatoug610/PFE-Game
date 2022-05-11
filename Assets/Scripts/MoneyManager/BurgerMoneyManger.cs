@@ -13,7 +13,9 @@ public class BurgerMoneyManger : MonoBehaviour
 
     [Header("Image Timer")]
     [SerializeField] private Image TimerImageBurger;
-
+    [Space]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider sliderLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +37,10 @@ public class BurgerMoneyManger : MonoBehaviour
             StartTimer = 0;
          
         }
+    }
+
+    public void SliderLevel(){
+        MoneyAdded += 1;
+        sliderLevel.value = 1f;
     }
 }

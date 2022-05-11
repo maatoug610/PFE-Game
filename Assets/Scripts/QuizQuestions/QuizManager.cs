@@ -10,7 +10,7 @@ public class QuizManager : MonoBehaviour
     public Text QuestionTxt;
     public GameObject QuizCanvas;
     public GameObject ChronometreCanvas;
-
+    
     public List<QuestionAndAnswer> QnA;
     public int currentQuestions;
     public bool End=false;
@@ -25,6 +25,8 @@ public class QuizManager : MonoBehaviour
         QuizCanvas.SetActive(false);
         ChronometreCanvas.SetActive(true);
     }
+
+    
 
     public void correct(){
        
@@ -52,9 +54,13 @@ public class QuizManager : MonoBehaviour
 
 
     void generateQuestion(){
+
        
         if(QnA.Count > 0){
-
+            if(QuizCanvas.activeSelf){
+                StartCoroutine("Counter");
+            }
+            
         currentQuestions = Random.Range(0,QnA.Count);
         
         QuestionTxt.text = QnA[currentQuestions].Question;
@@ -73,6 +79,8 @@ public class QuizManager : MonoBehaviour
     public void Close(){
         QuizCanvas.SetActive(false);
     }
+
+    
 
     
 }

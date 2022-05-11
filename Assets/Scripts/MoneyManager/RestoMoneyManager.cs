@@ -22,6 +22,9 @@ public class RestoMoneyManager : MonoBehaviour
     [Space]
 	[Header ( "FX" )]
 	[SerializeField] ParticleSystem fxGems;
+    [Space]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider sliderLevel;
 
     
 
@@ -55,4 +58,9 @@ public class RestoMoneyManager : MonoBehaviour
            
         }
     }  
+
+    public void SliderLevel(){
+        MoneyAdded += 1;
+        sliderLevel.value = 1f;
+    }
 }

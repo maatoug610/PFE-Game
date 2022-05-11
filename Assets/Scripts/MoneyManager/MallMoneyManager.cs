@@ -16,7 +16,9 @@ public class MallMoneyManager : MonoBehaviour
     [Space]
 	[Header ( "FX" )]
 	[SerializeField] ParticleSystem fxGems;
-
+    [Space]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider sliderLevel;
     
     // Start is called before the first frame update
     void Start()
@@ -40,5 +42,10 @@ public class MallMoneyManager : MonoBehaviour
             StartTimer = 0;
          
         }
+    }
+    
+    public void SliderLevel(){
+        MoneyAdded += 1;
+        sliderLevel.value = 1f;
     }
 }

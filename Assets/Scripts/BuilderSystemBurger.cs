@@ -11,6 +11,7 @@ public class BuilderSystemBurger : MonoBehaviour
     [SerializeField] Text TimerBuild;
     [SerializeField] GameObject ChronometreCanvas;
     [SerializeField] GameObject QuizCanvas;
+      public GameObject LoseGameCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -22,7 +23,13 @@ public class BuilderSystemBurger : MonoBehaviour
     [SerializeField] GameObject Build1;
     [SerializeField] GameObject TerrainBuild;
     [SerializeField] GameObject nextBuild;
-
+    [Space ]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider level_Slider;
+    float slider_store;
+[Space]
+    [Header("Timer Quiz")]
+    [SerializeField] private Text TimerText;
     // Raycast to detected object :
     Ray ray;
     RaycastHit hit;
@@ -30,12 +37,12 @@ public class BuilderSystemBurger : MonoBehaviour
     //public static BuilderSystem2 Instance {get; private set;}
     int statusClicked2=0;
     [Header("Time in second: 60s -> 1m")]
-    int startDay=180; //3 min
+    [SerializeField] int startDay=60; //1 min
 
-    public QuizManager quizManager;
+    public QuizManager2 quizManager;
     // Mission Build Complet sound
     public AudioSource audioSource;
-    
+    public int Timer = 10;
     
 
     // Start is called before the first frame update
@@ -45,6 +52,8 @@ public class BuilderSystemBurger : MonoBehaviour
         
         statusClicked2 = PlayerPrefs.GetInt("statusClicked2", 0);
         startDay = PlayerPrefs.GetInt("startDay", startDay);
+        slider_store = PlayerPrefs.GetFloat("slider_store", slider_store);
+
         string dateExitString = PlayerPrefs.GetString ("dateExit", "");
 
        
@@ -69,6 +78,8 @@ public class BuilderSystemBurger : MonoBehaviour
            Destroy(TerrainBuild);
            Build1.SetActive(true);
            nextBuild.SetActive(true);
+           //store the level bar
+           level_Slider.value = slider_store;
            audioSource.Play();
         }
         
@@ -90,11 +101,31 @@ public class BuilderSystemBurger : MonoBehaviour
                     }
                     else{
                         QuizCanvas.SetActive(true);
+                        StartCoroutine("CounterOfQuiz");
                     }
                }
              }
          }
         
+    }
+     void LoseGame()
+    {
+        LoseGameCanvas.SetActive(true);
+        QuizCanvas.SetActive(false);
+        GameData.Gems -=20;
+        StartCoroutine("ActivePanel");
+    }
+    IEnumerator CounterOfQuiz(){
+       while(Timer > 0){
+        yield return new WaitForSeconds(1f);
+        Timer --;
+        TimerText.text = $"{(Timer / 60) % 60}m:{Timer % 60}s";
+        }
+        LoseGame();
+    }
+    IEnumerator ActivePanel(){
+        yield return new WaitForSeconds(2f);
+        LoseGameCanvas.SetActive(false);
     }
      // Button of Start Count Timer1:
     public void StartCounter(){
@@ -130,6 +161,9 @@ public class BuilderSystemBurger : MonoBehaviour
         Build1.SetActive(true);
         nextBuild.SetActive(true);
         audioSource.Play();
+        level_Slider.value += 2;
+        slider_store = level_Slider.value;
+        PlayerPrefs.SetFloat("slider_store",slider_store);
         
     }
     //Timer of Show MinusMoney Panel:
@@ -145,6 +179,7 @@ public class BuilderSystemBurger : MonoBehaviour
         PlayerPrefs.SetString("dateExit", dateExit.ToString()); // Save date Quit game
         PlayerPrefs.SetInt("statusClicked2",statusClicked2);
         PlayerPrefs.SetInt("startDay", startDay); //Save Time Text
+        PlayerPrefs.SetFloat("slider_store",slider_store);
         PlayerPrefs.Save();
     }
     //when application is quit:

@@ -25,6 +25,9 @@ public class CashTRiggerAllClient : MonoBehaviour
     [Space]
     [Header("Fruit Image")]
     [SerializeField] private GameObject[] FoodImage;
+     [Space]
+    [Header ("Slider Level")]
+    [SerializeField] private Slider sliderLevel;
 
     private void OnTriggerEnter(Collider other){
         //Animation...
@@ -68,5 +71,10 @@ public class CashTRiggerAllClient : MonoBehaviour
             StartTimer = 1;
             audioSource.Play();
         }   
+    }
+
+    public void SliderLevel(){
+        MoneyAdded += 1;
+        sliderLevel.value = 1f;
     }
 }

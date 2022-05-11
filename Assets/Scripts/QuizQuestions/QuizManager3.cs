@@ -13,6 +13,7 @@ public class QuizManager3 : MonoBehaviour
     public Text QuestionTxt;
     public GameObject QuizCanvas;
     public GameObject ChronometreCanvas;
+   
     public bool End=false;
 
     void Start(){
@@ -27,6 +28,7 @@ public class QuizManager3 : MonoBehaviour
         ChronometreCanvas.SetActive(true);
     }
 
+ 
     public void correct(){
 
         QnA.RemoveAt(currentQuestions);
@@ -55,9 +57,9 @@ public class QuizManager3 : MonoBehaviour
 
 
     void generateQuestion(){
-       
+      
         if(QnA.Count > 0){
-
+          
         currentQuestions = Random.Range(0,QnA.Count);
         
         QuestionTxt.text = QnA[currentQuestions].Question;
@@ -76,4 +78,6 @@ public class QuizManager3 : MonoBehaviour
     public void Close(){
         QuizCanvas.SetActive(false);
     }
+
+     
 }
