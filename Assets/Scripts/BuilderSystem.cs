@@ -14,6 +14,7 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject ChronometreCanvas;
     [SerializeField] GameObject QuizCanvas;
     public GameObject LoseGameCanvas;
+    [SerializeField] GameObject DescribeCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -26,7 +27,7 @@ public class BuilderSystem : MonoBehaviour
     [SerializeField] GameObject TerrainBuild;
     [SerializeField] GameObject nextBuild;
     [Header("Time in second: 60s -> 1m")]// 6h -> 21600s// 3day -> 259200
-    [SerializeField] int StartCount=60; //02 min
+    [SerializeField] int StartCount= 10; //10 seconds
     int statusClicked=0;
     [Space ]
     [Header ("Slider Level")]
@@ -45,7 +46,8 @@ public class BuilderSystem : MonoBehaviour
     // Mission Build Complet sound
     public AudioSource audioSource;
     public int Timer = 10;
-    
+
+
     
     // void Awake(){
     //     if(Instance == null){
@@ -60,6 +62,8 @@ public class BuilderSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+     
         Initialize();
         
         statusClicked = PlayerPrefs.GetInt("statusClicked", 0);
@@ -97,6 +101,9 @@ public class BuilderSystem : MonoBehaviour
            //store the level bar
            level_Slider.value = slider_store;
            audioSource.Play();
+           Destroy(DescribeCanvas);
+           
+           
         }
     }
 
@@ -110,8 +117,11 @@ public class BuilderSystem : MonoBehaviour
              if(Input.GetMouseButtonDown(0)){
                  
                 if(hit.collider.tag == "Terrain_Building"){
+                    DescribeCanvas.SetActive(false);
+                    
                     if(quizManager.End == true){
                         ChronometreCanvas.SetActive(true);
+                        
                     }
                    else{
                        QuizCanvas.SetActive(true);

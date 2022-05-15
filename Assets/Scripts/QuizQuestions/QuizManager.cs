@@ -37,6 +37,7 @@ public class QuizManager : MonoBehaviour
 
     public void wrong(){
         QuestionTxt.text = QnA[currentQuestions].Question;
+        
     }
 
     void SetAnswers(){
@@ -57,9 +58,7 @@ public class QuizManager : MonoBehaviour
 
        
         if(QnA.Count > 0){
-            if(QuizCanvas.activeSelf){
-                StartCoroutine("Counter");
-            }
+           
             
         currentQuestions = Random.Range(0,QnA.Count);
         

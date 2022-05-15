@@ -45,7 +45,7 @@ public class UpgradeSystem : MonoBehaviour
         if (level_Slider2.value > 9 ){
              level_Slider.value += 1;
             level_Slider2.value = 1;
-            GameData.Gems += 1;
+            GameData.Gems += 10;
         }
     }
     public void openUpgrade(){
