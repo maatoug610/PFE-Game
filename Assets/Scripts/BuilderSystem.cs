@@ -138,7 +138,9 @@ public class BuilderSystem : MonoBehaviour
     void LoseGame()
     {
         Timer = 10;
+       if(QuizCanvas.activeSelf){
         LoseGameCanvas.SetActive(true);
+        }
         QuizCanvas.SetActive(false);
         GameData.Gems -=20;
         StartCoroutine("ActivePanel");

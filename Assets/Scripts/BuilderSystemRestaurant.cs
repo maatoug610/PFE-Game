@@ -11,7 +11,7 @@ public class BuilderSystemRestaurant : MonoBehaviour
     [SerializeField] Text TimerBuild;
     [SerializeField] GameObject ChronometreCanvas;
     [SerializeField] GameObject QuizCanvas;
-       public GameObject LoseGameCanvas;
+    public GameObject LoseGameCanvas;
 	[SerializeField] Button closeButton;
     [SerializeField] GameObject ButtonBuy;
     
@@ -118,7 +118,9 @@ public class BuilderSystemRestaurant : MonoBehaviour
     void LoseGame()
     {
         Timer =10;
+       if(QuizCanvas.activeSelf){
         LoseGameCanvas.SetActive(true);
+        }
         QuizCanvas.SetActive(false);
         GameData.Gems -=20;
         StartCoroutine("ActivePanel");

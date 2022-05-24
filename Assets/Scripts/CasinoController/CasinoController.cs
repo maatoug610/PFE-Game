@@ -19,7 +19,7 @@ public class CasinoController : MonoBehaviour
     [SerializeField] private Slider sliderLevel;
     
     public float MoneyAdded = 0;
-    public float Timer = 6;
+    public float Timer = 7;
     int StartTimer = 1;
     public float TimeRest = 6;
 
@@ -49,7 +49,7 @@ public class CasinoController : MonoBehaviour
         if(Timer < 0){
             GameData.Gems = GameData.Gems + (int) MoneyAdded;
             //Timer = TimeRest;
-            Timer = 6;
+            Timer = 7;
             StartTimer = 1;
             PlayerPoker.SetActive(true);
             PlayerPingPong.SetActive(true);
