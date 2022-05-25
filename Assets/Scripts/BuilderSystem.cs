@@ -45,7 +45,7 @@ public class BuilderSystem : MonoBehaviour
 
     // Mission Build Complet sound
     public AudioSource audioSource;
-    public int Timer = 10;
+    public int Timer =30;
 
 
     
@@ -137,7 +137,7 @@ public class BuilderSystem : MonoBehaviour
 
     void LoseGame()
     {
-        Timer = 10;
+        Timer = 25;
        if(QuizCanvas.activeSelf){
         LoseGameCanvas.SetActive(true);
         }

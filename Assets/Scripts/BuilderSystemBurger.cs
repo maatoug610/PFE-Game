@@ -42,7 +42,7 @@ public class BuilderSystemBurger : MonoBehaviour
     public QuizManager2 quizManager;
     // Mission Build Complet sound
     public AudioSource audioSource;
-    public int Timer = 10;
+    public int Timer = 30;
     
 
     // Start is called before the first frame update
@@ -110,7 +110,7 @@ public class BuilderSystemBurger : MonoBehaviour
     }
      void LoseGame()
     {
-        Timer =10;
+        Timer =25;
     if(QuizCanvas.activeSelf){
         LoseGameCanvas.SetActive(true);
         }

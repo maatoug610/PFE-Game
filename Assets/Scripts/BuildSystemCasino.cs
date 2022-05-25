@@ -44,7 +44,7 @@ public class BuildSystemCasino : MonoBehaviour
     public QuizManager4 quizManager;
     // Mission Build Complet sound
     [SerializeField] private AudioSource audioSource;
-    public int Timer = 10;
+    public int Timer = 30;
     
 
     // Start is called before the first frame update
@@ -116,7 +116,7 @@ public class BuildSystemCasino : MonoBehaviour
     }
     void LoseGame()
     {
-        Timer = 10;
+        Timer = 25;
         if(QuizCanvas.activeSelf){
         LoseGameCanvas.SetActive(true);
         }

@@ -17581,7 +17581,7 @@ MonoBehaviour:
   startDay4: 40
   quizManager: {fileID: 140648703}
   audioSource: {fileID: 1728905519}
-  Timer: 16
+  Timer: 30
 --- !u!1 &430942591
 GameObject:
   m_ObjectHideFlags: 0
@@ -44510,10 +44510,10 @@ Transform:
   - {fileID: 1328426290}
   - {fileID: 2070668292}
   - {fileID: 2085037683}
-  - {fileID: 1812618154}
   - {fileID: 1158562956}
   - {fileID: 710898320}
   - {fileID: 1817317994}
+  - {fileID: 1812618154}
   - {fileID: 468911794}
   - {fileID: 818047246}
   - {fileID: 1610086497}
@@ -52375,7 +52375,7 @@ MonoBehaviour:
   TimerText: {fileID: 1986078756}
   quizManager: {fileID: 1382540287}
   audioSource: {fileID: 1728905519}
-  Timer: 15
+  Timer: 30
 --- !u!1001 &1390536219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65296,7 +65296,7 @@ MonoBehaviour:
   startDay: 20
   quizManager: {fileID: 1103490121}
   audioSource: {fileID: 1728905519}
-  Timer: 15
+  Timer: 30
 --- !u!1001 &1715773329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73839,7 +73839,7 @@ MonoBehaviour:
   startDay2: 30
   quizManager: {fileID: 1309567964}
   audioSource: {fileID: 1728905519}
-  Timer: 15
+  Timer: 30
 --- !u!1001 &1964704784
 PrefabInstance:
   m_ObjectHideFlags: 0
